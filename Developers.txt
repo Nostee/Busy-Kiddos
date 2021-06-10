@@ -2,4 +2,8 @@ Members:
 1. Jedidiah David H. Calayag
 2. Marielle V. Bartolome
 3.
+<<<<<<< HEAD
 4. Ricardo C. Santos III
+=======
+4. Ricardo C. Santos III :) :)
+>>>>>>> e7d8b15469775b8f66389a023460207172ac7780
