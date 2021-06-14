@@ -1,0 +1,702 @@
+CHAPTER 1 - THEORIES
+
+# Creating the main() function of your flutter app.
+// Note: Example Only:
+void main() => runApp(MaterialApp(
+	home: *name of your class*()
+));
+
+// Note: void main() is the fuction that our app will run first.
+// Note: startApp() is a function that runs a widget at the startup.
+
+# Creating a stateless widget.
+1. Type "stless" and it will automatically create the code for you.
+2. Name the class.
+3. Return a widget. Preferrably Scaffold().
+
+// Note: Example Only:
+class *any name* extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+		//put anything here.
+    );
+  }
+}
+
+# Creating a statful widget.
+1. Type "stful" and it will automatically create the code for you.
+2. Name the class.
+3. Return a widget in the second created class. Preferrably Scaffold().
+
+// Note: Example Only:
+class Test extends StatefulWidget {
+  @override
+  _TestState createState() => _TestState();
+}
+
+class _TestState extends State<Test> {
+  //intialize any data here.
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+		//put anything here.
+	);
+  }
+}
+
+# Converting to stateful/stateless widget.
+1. Just click the state after the "extend".
+2. Choose your new state. 
+
+# How to display data in your widgets.
+// Note: Example Only:
+int ctr = 0;
+*when using in widget*
+"$ctr"
+//always use in a string then put a dollar sign before the variable.
+
+# When manipulating data in a function. Always put your code in the setState(() {}). It also works even if the function is empty.
+// Note: Example Only:
+onPressed: () {
+          setState(() {
+            myLevel = myLevel+1;
+            print("Log: Added some level!");
+          });
+		  
+
+*name_of_variable is a list.
+*any_variable_name will act as a receiver of data from the list.
+		  
+# Creating your own class.
+1. Create a new file. (first letter should be a smaller case)
+2. The class name should be the same with 
+   the file name but the first letter should be upper case.
+2. Initialize your variables.
+3. Import your file to your main class.
+
+"Note: Creating your own class is like creating your own data type with different properties."
+// Note: Example Only(creating your own class)
+class Person
+{
+	String name;
+	String age;
+	
+	Person({this.name , this.age})
+}
+// Note: Example Only(importing)
+import "person.dart";
+
+# Assigning data to your class (mostly done in a list).
+List<Person> people = [
+	Person(name: "Jedidiah",age: "20")
+	]
+
+# When getting a data from the property of a custom class.
+1. Should be inside the ${object.property}
+// Note: Example Only
+children: people.map((human){
+return Text("Name is ${human.name}, ${human.age} years old.")
+})
+
+# Creating a Widget Class.
+1. Create a new file. Name it the same with the name of the class. (Lowercase for convention's sake)
+2. Create a stateless widget. The class name should be uppercase. 
+3. Create a final variable name of the object that will be used.
+4. Create a constructor that gives data to the final variable.
+5. Import the files imported by the main file.
+// Note: Example Only
+class QuoteTemplate extends StatelessWidget {
+  final Quotes myQuote;
+  QuoteTemplate({this.myQuote});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(myQuote.author);
+  }
+}
+
+// Note: Wor when calling a widget class.
+children: myQuote.map((x) {
+		return QuoteTemplate(myQuote: x);
+	  }).toList(),
+
+# Creating a function object.
+1. Create a function object.
+2. This is mostly created in custom widgets.
+// Note: Example Only
+final Function delete; 
+
+Notes: 
+1. "delete" is the variable name
+2. "Function" is an object.
+
+// Note: Example when delivering the data of the custom function from the main class
+children: myQuote.map((x) {
+                return QuoteTemplate(
+                    myQuote: x, //disregard this. focus on the delete
+                    delete: () {
+                      setState(() {
+                        myQuote.remove(x);
+                      });
+                    }
+                );
+              }).toList(),
+
+// Note: When calling the function from the custom class
+onPressed: () 
+{
+     delete();
+}
+
+# Creating multiple pages and how to navigate through them.
+1. Create custom classes then import the material app in each file. 
+2. In your main class, create a routes property. (Go to the MaterialApp() section in order to understand on how to use this property.)
+3. Put some destination in your routes property. 
+4. In order to navigate to a page, add a Navigator. object to the function of a particular button.
+   // Note: Example Only:
+	onPressed: () {
+		Navigator.pushNamed(context, "/whateverlocation"); 
+		/or/
+		Navigator.pushReplacementNamed(context, "/whateverlocation"); 
+		/or/
+		Naviagtor.pop(context, {}) //goes back to the initial screen
+	}
+	
+# Passing data to other page.
+1. Add an additional argument named "arguments:" to the Navigator. object. //when popping, "arguments: " is not needed anymore.
+2. Put a map inside the argument. 
+	// Note: Example Only:
+	onPressed: () {
+		Navigator.pushReplacedNamed(context, "/whateverlocation",arguments: {
+			'location' : wt.location,
+			'flag' : wt.flag,
+			'currentTime' : wt.currentTime,
+		}); 
+	}
+3. Go to the page that you will navigate into.
+4. Initialize a map data. (outside of build)
+5. Give the map variable a ModalRoute. object. (inside the build)
+	// Note: Example Only:
+	class _HomeState extends State<Home> {
+
+	  Map myData;
+
+	  @override
+	  Widget build(BuildContext context) {
+		myData = ModalRoute.of(context).settings.arguments;
+		return Scaffold()
+	  }
+ 
+# Navigator Pop and Data Return Combo
+1. From the main class:
+		onPressed: () async 
+		{
+		  dynamic result = await Navigator.pushNamed(context,"/chooseLocation");
+		  myData = {
+			"location": result["location"],
+			"currentTime": result["currentTime"]
+			};
+			setState(() {});
+		}
+2. From the other class:
+		Navigator.pop(context, 
+		{
+        "location": wt.location,
+        "currentTime": wt.currentTime,
+		});
+
+# Implementing a function that runs once the custom class run.
+1. Just right after the class state, type initstate and it will automatically code for you.
+2. Remove TO DO line.
+	// Note: Example Only:
+	@override
+	void initState()
+	{
+		super.initState();
+		print("It runs.");
+	}
+
+# Creating a Asynchronous function. (A function that runs after several time after.)
+1. Create a void function and name it whatever you want.
+2. Put a Future. object that handles delayed().
+3. Enter a duration and another function inside the delayed property.
+4. Then put a "async" right after the function name. (After the "()")
+5. If you want to finish a function first before moving on to the next function, put an "await" before the line.
+6. Always wrap void with Future.
+	// Note: Example Only
+	  Future<void> delayedRun() async
+	  {
+		await Future.delayed(Duration(seconds: 3),() {
+		  print("3 seconds has passed.");
+		});
+	  }
+	  
+# Putting data into variables with Asynchronous function.
+1. Initialize a variable then put a Future. object in it. (Including the properties)
+2. Inside the nested function, return a value.
+3. Do not forget the "async". For some reason, you can't return a value without it.
+	// Note: Example Only
+	Future<void> delayedRun() async
+	{
+		String username = await Future.delayed(Duration(seconds: 3),() {
+			return "Nostee";
+		})
+	}
+	
+# Adding the HTTP package to flutter.
+1. Go to pubspec.yaml
+2. Under dependencies, add the package, http: ^0.12.0+2
+	// Note: Example Only
+		dependencies:
+		  flutter:
+			sdk: flutter
+		  http: ^0.12.0+4
+ 3. Save file then get dependencies on the main class. 
+ 4. import 'package:http/http.dart' on the file where you're gonna use the http package.
+ 5. also import 'dart:convert' on the same file.
+
+ # Using the HTTP package.
+ 1. In a future async function, create a Response object. Name the variable anything you want.
+ 2. Put an "await" before the get() function.
+ 3. Inside the get() function, put this: 'https://jsonplaceholder.typicode.com/todos/1'
+ 4. After the line, create a map object and put inside a jsonDecode() function. 
+ 5. Inside the jsonDecode() function, get the variable name of your response object and get the "body" property.
+ 6. You can now call your map variable.
+ 
+ # Creating a date time object.
+ 1. Let's assume that you already got the property from the world time api and gave it to a String variable.
+ 2. Create a DateTime object and give it a variable name.
+ 3. Equate it to an another DateTime. object then parse(). 
+ 4. Inside the parse function, give it the variable that you assigned the date time property.
+ 
+ # Adding an hour to the date time object.
+ 1. Get the variable name of your DateTime object then put a ".add()" to it.
+ 2. Add a Duration() function inside the add() function.
+ 3. Inside the duration() function, put "hours: " then put an integer right after it. 
+	// Note: Example Only:
+	Future<void> getTime() async
+	  {
+		Response manila = await get("http://worldtimeapi.org/api/timezone/Asia/Manila");
+		Map time = jsonDecode(manila.body); // getting the properties and putting it in a map
+		String date = time["datetime"];	// getting the "datetime" property then putting it in a String
+		String offset = time["utc_offset"].substring(1,3); // getting the "utc_offset" property then putting it in a String
+														   // getting the numbers only by using substring()
+
+		DateTime dt = DateTime.parse(date); 	// creating a DateTime object.
+		dt = dt.add(Duration(hours: int.parse(offset)));	// add an hour to the current DateTime object.
+		print("Time in manila is $dt");
+	  }
+ 
+# Formatting Dates.
+1. Go to pubspec.yaml
+2. Under dependencies, add the package, intl: ^0.15.8
+	// Note: Example Only
+	dependencies:
+	  flutter:
+		sdk: flutter
+	  http: ^0.12.0+2
+	  intl: ^0.15.8
+3. Save file then get dependencies on the main class. 
+4. import 'package:intl/intl.dart' on the file where you're gonna use the intl package.
+5. Assign a DateFormat.jm().format() inside a String variable.
+	// Note: Example Only
+	currentTime = DateFormat.jm().format(dt); //this is for time only.
+ 
+ # Creating a loading display
+1. Go to pubspec.yaml
+2. Under dependencies, add the package, flutter_spinkit: ^4.0.0
+	// Note: Example Only
+	dependencies:
+	  flutter:
+		sdk: flutter
+	  http: ^0.12.0+2
+	  intl: ^0.15.8
+	  flutter_spinkit: ^4.0.0
+3. Save file then get dependencies on the main class. 
+4. import 'package:flutter_spinkit/flutter_spinkit.dart' on the file where you're gonna use the flutter_spinkit package.
+5. Go to the website: pub.dev/packages/flutter_spinkit and choose a widget and place it in a child property.
+	// Note: Example Only
+	child: SpinKitRotatingCircle(
+	  color: Colors.white,
+	  size: 50.0,
+	)
+	
+ # Using ternary operators.
+ 1. Shorcut if condition looks like this:
+	// Note: Example Only
+	bool checker = *condition* ? true : false;
+	
+ # Creating constants.
+ Note: Use constants if you have multiple shared codes.
+ 1. Create a folder named shared
+ 2. Create a const variable
+ 3. Put a widget inside of it.
+ 4. Import the folder in the class where you'll be using the constants.
+ 5. Just call the variable name when using it.
+ 6. When adding properties, just add "variable_name.copyWith(property: value)"
+ 
+# Validating User Input in Form Fields
+1. Create a final variable containing GlobalKey object that has <FormState>() in the class where you use the Form() widget.
+> final formKey = GlobalKey<FormState>();
+2. Put a key property and put the formKey inside it. (do this literally)
+3. Inside a function (prefferably in onPressed), create an if statement. (this is inside where you're gonna get all the values of the form)
+4. The condition is:
+> if(formKey.currentState.validate())
+> the condition statement returns true or false.
+5. Create a validator property inside the TextFormFields that has a function with the value inside the parenthesis.
+6. Return a null in the validator function if it's valid. 
+
+
+CHAPTER 2 - WIDGETS
+
+// Note: Widgets starts with an UPPERCASE letter.
+// Note: Properties starts with a LOWERCASE letter.
+// Note: put a comma(,) every after widget/property if you to want to put another widget/property.
+
+# Widget: MaterialApp() - it is our main widget.
+	Properties:
+	> home - it assigns a widget that the app should show first when it is opened.
+		   - therefore, you should assign a widget here; Preferrably your own class.
+	> routes - it contains a function that handles a map. 
+	// Note: Example Only
+	routes: 
+	{
+		"/": (context) => LoadingScreen(),
+		"/home": (context) => Home(),
+		"/location": (context) => ChooseLocation(),
+	}
+		// Note: "/" stands for a base route. Basically, the app starts on the base route.
+
+    > initialRoute - It overrides the base route. Do not put with the home property.
+				   - It contains a string value of the page. eg. "/home"
+    > theme - holds the ThemeData() widget.
+
+# Widget: ThemeData() - it holds the properties for changing the overall theme.
+	Properties:
+	> primaryColor
+	> accentColor
+	> cursorColor
+	> fontFamily
+	
+# Widget: Scaffold() - it wraps our widgets into one whole page.
+	Properties:
+	> appBar - it is the bar that shows at the very top of the Scaffold().
+			 - it contains the widget, AppBar().
+	> body - it specifies what should be the content of your scaffold. 
+		   - essential to every scaffold.
+		   - it should contain a widget.
+    > floatingActionButton - it is a button that floats on the bottom right(with a little bit of padding) of the scaffold.
+						   - it contains the widget, FloatingActionButton().
+	
+# Widget: AppBar() - it handles the info of the appBar property.
+	Properties:
+	> title - it will display a text on the bar using a Text() widget.
+	> centerTitle - it contains a boolean(true or false) that decides whether the text is centralized or not.
+	> backgroundColor - it paints the widget with an assigned color.
+					  - it contains a Color. object: Color.*any color*[*any value*]
+							// Notes:  Colors.red[500] 
+	> elevation - set to 0.0 to remove the drop shadow.
+	> actions - it contains a list of widgets.
+	
+# Widget: FloatingActionButton() - it handles the info of the floatingActionButton property.
+	Properties:
+	> onPressed - it contains a function.
+					// Note: Example Only. () {*code here*} 
+	> child - it handles a single widget nested into its parent widget.
+	> backgroundColor - it paints the widget with an assigned color.
+					  - it contains a Color. object: Color.*any color*[*any value*]  
+							// Notes:  Colors.red[500] 
+	
+# Widget: Text() - it handles a String to be shown and could hold multiple properties.
+	Properties:
+	> style - it allows to customize the text to be displayed. 
+			- it contans the widget, TextStyle().
+			
+# Widget: TextStyle() - it handles the info of the style property.
+	Properties:
+	> fontFamily: it contains a String which is the name of your chosen font family. 
+	> color - it paints the widget with an assigned color.
+			- it contains a Color. object: Color.*any color*[*any value*]  
+					// Notes:  Colors.red[500] 
+	> fontSize - it contains a double that determines the size of the font.
+	> fontWeight - it contains a FontWeight. object:  FontWeight.*any font weight*
+						// Notes:  FontWeight.bold 
+	> letterSpacing - it contains a double that determines the space between the letters.
+
+***USING OTHER FONTS***
+1. Create a folder inside the project.
+2. Put the downloaded font inside the folder.
+3. Edit pubspec.yaml, particularly on the "fonts" section.
+4. Click "Get dependencies" on the main class.
+
+// Note: Example Only
+fonts: 
+	- family: any name you want to give on your font
+	  fonts: 
+		- asset: path of the font file
+
+# Widget: Center() - it centralizes any nested widget inside of it.
+	Properties:
+	> child - it handles a single widget nested into its parent widget.
+	
+# Widget: Image() - it handles an image.
+	Properties:
+	> image - it handles a widget called, AssetImage() or NetworkImage().
+	
+# Widget: AssetImage() - it handles a string inside the () that loads a local image using its path. It could also hold height and width.
+# Widget: NetworkImage() - it handles a string inside the () that loads an online image using its url/location.
+	
+***USING LOCAL IMAGES***
+1. Create a folder inside the project.
+2. Put the downloaded image inside the folder.
+3. Edit pubspec.yaml, particularly on the "assets" section.
+4. Click "Get dependencies" on the main class.
+
+// Note: Example Only
+assets: 
+	- name of folder/
+******
+	
+# Widget: RaisedButton()/FlatButton()/RaisedButton.icon()/FlatButton.icon()/IconButton() - it is a button with or without a drop shadow and with or without an icon.
+						
+	Properties:
+	> onPressed - it contains a function.
+					// Note: Example Only 
+					() {*code here*} 
+	> child - it handles a single widget nested into its parent widget.
+	> color - it paints the widget with an assigned color.
+			- it contains a Color. object: Color.*any color*[*any value*]  
+					// Note: Example Only 
+					Colors.red[500] 
+	if .icon:
+	> icon - contains the widget, Icon().
+	> label - it sits right next to the icon.
+			- it contains the widget, Text().
+	
+# Widget: Icon() - it handles an Icons. object: Icons.*name of icon* inside its ().
+	Properties:
+	> color - it paints the widget with an assigned color.
+			- it contains a Color. object: Color.*any color*[*any value*]  
+					// Notes:  Colors.red[500] 
+	> size	- it contains a double that determines it size.
+	
+# Widget: Container() - it wraps the widget.
+	Properties:
+	> color - it paints the widget with an assigned color.
+			- it contains a Color. object: Color.*any color*[*any value*]  
+					// Notes:  Colors.red[500] 
+	> child - it handles a single widget nested into its parent widget.
+	> padding/margin - it gives space surrounding the widget that's inside/outside the container
+			  - contains an EdgeInsets. object: EdgeInsets.all[double]
+												EdgeInsets.symmetric[horizontal: double,vertical: double]
+												EdgeInsets.fromLTRB[double,double,double,double]
+	> decoration - it handles the BoxDecoration widget.
+
+# Widget: BoxDecoration() - it handles a image property.
+	Properties:
+	> image - it handles a DecorationImage widget.
+	
+# Widget: DecorationImage() - it is used for creating background images in the container.
+	Properties:
+	> image - it handles an AssetImage() widget.
+	> fit - it is used to cover the entire screen. It contains "BoxFit.cover".
+												
+# Widget: Padding() - it gives space around the child widget.
+	Properties:
+	> padding - it gives space surrounding the widget.
+			  - contains an EdgeInsets. object: EdgeInsets.all[double]
+												EdgeInsets.symmetric[horizontal: double,vertical: double]
+												EdgeInsets.fromLTRB[double,double,double,double]
+	> child - it handles a single widget nested into its parent widget.
+	
+# Widget: Row() - it wraps multiple widgets horizontally.
+	Properties:
+	> children - it contains the list, <Widget>[].
+			   - the list can contain multiple widgets.
+    > mainAxisAlignment - contains a MainAxisAlignment. object: MainAxisAlignment.center
+																MainAxisAlignment.spaceBetween
+																MainAxisAlignment.spaceEvenly
+																MainAxisAlignment.end
+	> crossAxisAlignment - contains a CrossAxisAlignment. object: CrossAxisAlignment.stretch
+																  CrossAxisAlignment.start
+																  CrossAxisAlignment.end
+																  
+# Widget: Column()/ListView() - it wraps multiple widgets vertically.
+// Note: ListView() has children property only.
+	Properties:
+	> children - it contains the list, <Widget>[].
+			   - the list can contain multiple widgets.
+    > mainAxisAlignment - contains a MainAxisAlignment. object: MainAxisAlignment.center
+																MainAxisAlignment.spaceBetween
+																MainAxisAlignment.spaceEvenly
+																MainAxisAlignment.end
+	>crossAxisAlignment - contains a CrossAxisAlignment. object: CrossAxisAlignment.stretch
+																  CrossAxisAlignment.start
+																  CrossAxisAlignment.end
+
+# Widget: Expanded() - it expands the space consumed by the child widget. Mostly used in Column() and Row().
+	Properties:
+	> child - it handles a single widget nested into its parent widget.
+	> flex - it contains an integer that determines the space consumed shared by the widgets under the Column() or Row().
+	
+# Widget: SizedBox() - it is an empty box made for giving space between widgets.
+	Properties:
+	> height - it contains a double that determines its height.
+	> width - it contains a double that determines its width.
+	
+# Widget: CircleAvatar() - it displays an image that's clipped in a circle.
+	Properties:
+	> backgroundImage - it contains an AssetImage() widget.
+	> radius - contains a double that determines its size.
+	
+# Widget: Divider() - it displays a thin line between two widgets.
+	Properties:
+	> height - it contains a double that determines its height.
+	> color - it paints the widget with an assigned color.
+			- it contains a Color. object: Color.*any color*[*any value*]  
+					// Note: Example Only
+					Colors.red[500] 
+	
+# Widget: Card() - it acts as a container of a widget in a elevated card form.
+	Properties:
+	> padding/margin - it gives space surrounding the widget that's inside/outside the card.
+		  - contains an EdgeInsets. object: EdgeInsets.all[double]
+											EdgeInsets.symmetric[horizontal: double,vertical: double]
+											EdgeInsets.fromLTRB[double,double,double,double]
+	> child - it handles a single widget nested into its parent widget.
+	
+# Widget: SafeArea() - it moves the child widget to the screen where we can actually see it.
+	Properties:
+	> child - it handles a single widget nested into its parent widget.
+	
+# Widget: ListView.builder() - it display your items in a list.
+	Properties:
+	> itemCount - it handles an integer that determines the length of your list display.
+	> itemBuilder - it contains a function that handles a context,index and an another function that returns a widget.
+		// Note: Example Only
+		body: ListView.builder(
+			itemCount: variablename.length,DisplayBrews()
+			itemBuilder: (context,index) {
+			  return ListTile()
+			},
+
+# Widget: ListTile() - it handles your items to be displayed in a list.
+	Properties:
+	> onTap - it handles a function like onPressed.
+	> title - it handles a text widget to be displayed.
+	> leading - it handles an image to be displayed before the label.
+		// Note: Example Only
+		ListTile(
+		onTap: () {}
+		title: Text(variablename[index].propertyname)
+		)
+
+# Widget: Form() - it acts as a container for grouping and validating multiple form fields.
+	Properties:
+	> child - preferrably it holds a Column().
+	> key - it holds the variable for the GlobalKey.
+	// the column holds several TextFormField().
+
+# Widget: TextFormField() - it acts as a textfield where the user can input any string.
+	Properties:
+	> onChanged - it holds a function where inside the parenthesis is the variable that will contain the data of the textfield.
+				- inside the function is a setState() function that transfers the fetched data in a local variable
+	> obscureText - it holds a boolean that determines if the text showed is encrypted or not.
+	> decoration - it holds the widget, InputDecoration().
+	> style - it allows to customize the text to be displayed. 
+			- it contans the widget, TextStyle().
+	> validator - it holds a function that contains a value inside the paranthesis.
+	> autofocus - it holds a boolean that determines if it is automatically focused.
+			
+# Widget: InputDecoration() - it holds properties for decorating the field.
+	Properties:
+	> labelText - it's a text to be displayed on the top with low opacity on the field if not focused or null.
+	> hintText  it's a text to be displayed on the field with low opacity on the field if not focused or null.
+	> labelStyle - it holds the widget, TextStyle().
+	> filled - boolean if it is a solid field.
+	> fillColor - determines the color of the field.
+	
+	// Note: Example Only
+	TextFormField
+	(
+		decoration: InputDecoration(
+		  labelText: "Email",
+		  labelStyle: TextStyle(
+			fontSize: 25,
+			letterSpacing: 3,
+			fontWeight: FontWeight.w300,
+		  )
+		),
+		onChanged: (value) {
+		  setState((){
+			email = value;
+		  });
+		},
+		style: TextStyle(
+		  fontSize: 30,
+		  letterSpacing: 2,
+		  fontWeight: FontWeight.w300
+		),
+	),
+
+# Widget: DropDownButtonFormField() - it holds a list.
+	Properties:
+	> items - it contains map variable that returns a DropdownMenuItem() and converted into a list.
+	> value - it is the value that will be displayed at the field.
+	> onChanged - assign a function here with a value inside the paranthesis.
+	> decoration - it holds the widget, InputDecoration().
+# Widget: DrownDownMenuItem() - it holds a value responsible for giving an item to the field.
+	Properties:
+	> value - it contains the variable of the data.
+	> child - it holds a text that containts the variable.
+	// Note: Example Only
+	DropdownButtonFormField(
+		value: currentSugars ?? '0',
+		items: sugars.map((sugar){
+		  return DropdownMenuItem(
+			value: sugar,
+			child: Text("$sugar sugars")
+		  );
+		}).toList(),
+		onChanged: (val) {
+		  currentSugars = val;
+		  FocusScope.of(context).requestFocus(new FocusNode());
+		  //showSettings();
+		},
+	  ),
+	 //NOTE: the ?? stands for if the value is null, it will display the latter instead.
+
+# Widget: Slider() - it is a slider that the user can slide to obtain value.
+	Properties:
+	
+	> min - contains an int that represents the minimum value.
+	> max - contains an int that represents the maximum value.
+	> divisions - contains an in that represents the divisions.
+	> onChanged - contains a function.
+	> activeColor: contains a Color object of the slider.
+	> inactiveColor: contains a Color object of the line.
+	
+CHAPTER 3 - SCREENS
+ 
+# showModalBottomSheet - it slides a screen that starts at the bottom.
+1. Create a function inside the Widget build.
+2. Do this code:
+	void showSettings()
+    {
+      showModalBottomSheet(context: context, builder: (context) {
+        return ANY_WIDGET_TREE;
+      });
+    }
+3. Return any widget you want.
+// Note: It is recommended to return a widget that's outside the class
+
+CHAPTER 4 - FUNCTIONS
+FocusScope.of(context).requestFocus(new FocusNode()); // it removes the focus
+ 
+CHAPTER 5 - TIPS
+1. In order for the ListView.builder be inside the column, wrap it with Expanded().
+	
+	
+
+	
