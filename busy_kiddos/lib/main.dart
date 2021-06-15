@@ -20,7 +20,7 @@ class Starter extends StatefulWidget {
 class _StarterState extends State<Starter> {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIOverlays ([]);
+    SystemChrome.setEnabledSystemUIOverlays ([]); 
     return StreamProvider<UserLogin>.value(
         value: Authenticator().user,
         child: MaterialApp(
