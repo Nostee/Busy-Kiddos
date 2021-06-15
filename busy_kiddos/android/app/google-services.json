@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "963778673229",
+    "project_id": "busy-kiddos",
+    "storage_bucket": "busy-kiddos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963778673229:android:2f9e1914a070338b197a04",
+        "android_client_info": {
+          "package_name": "com.amigos.busy_kiddos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "963778673229-jcttdibpq932uedvvujq1oob2fl795uj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFj11_E4-1sFG8NrutIcdYXxnMFV_7Tgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "963778673229-jcttdibpq932uedvvujq1oob2fl795uj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
