@@ -20,11 +20,11 @@ class _LoaderAuthenticateState extends State<LoaderAuthenticate> {
       await Future.delayed(Duration(seconds: 3),() {
 		  if(user==null)
       {
-        Navigator.pushReplacementNamed(context, "login.dart");
+        Navigator.pushNamedAndRemoveUntil(context, "login.dart", (route) => false);
       }
       else
       {
-        Navigator.pushReplacementNamed(context, "home.dart");
+        Navigator.pushNamedAndRemoveUntil(context, "home.dart",(route)=> false);
     }
 		});
     }

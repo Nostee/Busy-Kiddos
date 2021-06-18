@@ -22,12 +22,12 @@ class _RegisterFormState extends State<RegisterForm> {
   String tip = "Note: This is also your username.";
   bool toggle1 = true;
   bool toggle2 = true;
-
+  dynamic error2 = "";
   void register()
   {
     if(formKey.currentState.validate())
     {
-      Navigator.pushReplacementNamed(context, "loaderRegister.dart", arguments: {
+      Navigator.pushNamed(context, "loaderRegister.dart", arguments: {
         "email": email,
         "password": password,
         "username": username,
@@ -41,12 +41,24 @@ class _RegisterFormState extends State<RegisterForm> {
     }
   }
 
+  void debug() async
+  {
+    print("DEBUGGER EMAIL!");
+    error2 = await Navigator.pushNamed(context, "loaderRegister.dart", arguments: {
+      "email": "dummy@gmail.com",
+      "password": "dummyako",
+      "username": "dummyako",
+    });
+    print("DEBUGGER ERROR!");
+    print(error2);
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     try
     {
-      temporaryData = ModalRoute.of(context).settings.arguments;
-      error = temporaryData["error"];
+      error = error2["error"];
     }
     catch(e)
     {}
@@ -224,6 +236,21 @@ class _RegisterFormState extends State<RegisterForm> {
                 onPressed: () async{register();},
                 child: Text(
                   "SIGN UP",
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.white
+                  ),
+                )
+              ),
+            ),
+            Center(
+              child: FlatButton(
+                color: Colors.black,
+                onPressed: () async{
+                  debug();
+                },
+                child: Text(
+                  "DEBUG BUTTON",
                   style: TextStyle(
                     fontSize: 30,
                     color: Colors.white
