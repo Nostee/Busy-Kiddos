@@ -3,6 +3,9 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:busy_kiddos/services/authenticator.dart';
 import 'package:busy_kiddos/widgets/loadingText.dart';
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:busy_kiddos/models/user.dart';
+
 // this is called by register.dart
 
 class LoaderRegister extends StatefulWidget {
@@ -14,7 +17,6 @@ class _LoaderRegisterState extends State<LoaderRegister> {
   int run = 1;
   Map fetchedData;
   dynamic temporaryData;
-  dynamic temporaryData2;
   dynamic uid;
 
   Future<void> fetchingData() async
@@ -33,7 +35,16 @@ class _LoaderRegisterState extends State<LoaderRegister> {
       if(temporaryData!=null)
       {
         print("USER IS REGISTERED. ONLY ONCE.");
+        
+        final FirebaseAuth auth = FirebaseAuth.instance;
+        final FirebaseUser user = await auth.currentUser();
+        final uid = user.uid;
+        print(uid);
+
+        await Authenticator(uid: uid).passNullStarterData(fetchedData["username"]);
         Navigator.pushNamedAndRemoveUntil(context, "home.dart", (route) => false);
+
+
       }
       else
       {
@@ -52,13 +63,11 @@ class _LoaderRegisterState extends State<LoaderRegister> {
   @override
   Widget build(BuildContext context) {
     fetchedData = ModalRoute.of(context).settings.arguments;
-
     print("THIS WIDGET RUNNED FOR "+run.toString()+" TIMES ALREADY");
     if(run==1)
     {
       fetchingData();
     }
-
     run = run+1;
     
     return Scaffold(
