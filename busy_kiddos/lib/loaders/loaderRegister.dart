@@ -11,6 +11,7 @@ class LoaderRegister extends StatefulWidget {
 }
 
 class _LoaderRegisterState extends State<LoaderRegister> {
+  int run = 1;
   Map fetchedData;
   dynamic temporaryData;
   dynamic temporaryData2;
@@ -25,14 +26,18 @@ class _LoaderRegisterState extends State<LoaderRegister> {
       temporaryData = await Authenticator().register(fetchedData["email"],fetchedData["password"]);
       print("(loaderRegister.dart)Temporary data: $temporaryData"); // debug
 
+      await Future.delayed(Duration(seconds: 3),() {
+		  print("3 seconds has passed.");
+		  });
+
       if(temporaryData!=null)
       {
-        Navigator.pop(context);
-        Navigator.pushReplacementNamed(context, "home.dart");
+        print("USER IS REGISTERED. ONLY ONCE.");
+        Navigator.pushNamedAndRemoveUntil(context, "home.dart", (route) => false);
       }
       else
       {
-        Navigator.pushReplacementNamed(context, "register.dart", arguments: {
+        Navigator.pop(context, {
           "error" : "Email invalid. Please try again, noob."
         });
       }
@@ -47,8 +52,15 @@ class _LoaderRegisterState extends State<LoaderRegister> {
   @override
   Widget build(BuildContext context) {
     fetchedData = ModalRoute.of(context).settings.arguments;
-    print("This should only be called once...");
-    fetchingData();
+
+    print("THIS WIDGET RUNNED FOR "+run.toString()+" TIMES ALREADY");
+    if(run==1)
+    {
+      fetchingData();
+    }
+
+    run = run+1;
+    
     return Scaffold(
         backgroundColor: Colors.grey[900],
         body: Column(

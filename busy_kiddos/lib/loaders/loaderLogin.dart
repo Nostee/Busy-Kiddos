@@ -24,11 +24,11 @@ class _LoaderLoginState extends State<LoaderLogin> {
         print("(loaderLogin.dart)Temporary data: $temporaryData"); // debug   
         if(temporaryData!=null&&temporaryData!="Failed!")
         {
-          Navigator.pushReplacementNamed(context, "home.dart");
+          Navigator.pushNamedAndRemoveUntil(context, "home.dart",(route) => false);
         }
         else
         {
-          Navigator.pushReplacementNamed(context, "login.dart",arguments: {
+          Navigator.pushNamedAndRemoveUntil(context, "login.dart",(route) => false,arguments: {
             'error' : "Wrong email or password, dummy."
           });
 
