@@ -9,6 +9,7 @@ import 'package:busy_kiddos/screens/register.dart';
 import 'package:busy_kiddos/services/authenticator.dart';
 import 'package:provider/provider.dart';
 import 'package:busy_kiddos/models/user.dart';
+import 'package:busy_kiddos/screens/try.dart'; 
 
 void main() => runApp(Starter());
 
@@ -37,6 +38,7 @@ class _StarterState extends State<Starter> {
         "register.dart": (context) => Register(),
         "loaderRegister.dart": (context) => LoaderRegister(),
         "loaderLogin.dart": (context) => LoaderLogin(),
+        "try.dart": (context) => Quiz(),
       }
       )
     );
