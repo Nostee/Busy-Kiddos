@@ -28,7 +28,7 @@ class _StarterState extends State<Starter> {
         primaryColor: Colors.black,
 	      accentColor: Colors.black87,
         cursorColor: Colors.black87,
-        fontFamily: "Pixelated"
+        fontFamily: "RoundedElegance"
       ),
       routes: {
         "/": (context) => LoaderAuthenticate(), 

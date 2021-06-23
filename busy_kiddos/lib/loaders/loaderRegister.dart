@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:busy_kiddos/services/authenticator.dart';
 import 'package:busy_kiddos/widgets/loadingText.dart';
-
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:busy_kiddos/models/user.dart';
+
 
 // this is called by register.dart
 

@@ -72,23 +72,6 @@ class _RegisterFormState extends State<RegisterForm> {
           Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Image.asset("assets/formWizard.gif"),
-            SizedBox(height: 20,),
-            Center(child: Text(
-              "None shall pass!",
-              style: TextStyle(
-                fontSize: 30,
-                color: Colors.white
-              )
-              )),
-            Center(child: Text(
-            "Unless you fill up this \n   form, of course.",
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.white
-            )
-            )),
-            SizedBox(height: 45,),
             TextFormField(
               validator: (val) {
                 if(val=="")
@@ -283,7 +266,7 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Create an account.")
       ),

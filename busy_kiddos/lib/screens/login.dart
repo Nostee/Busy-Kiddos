@@ -105,7 +105,7 @@ class _LoginState extends State<Login> {
                     setState(() {});
                   },
                   icon: Icon(Icons.remove_red_eye),
-                  color: Colors.white70,
+                  color: Colors.black87,
                 )
                 ],
               )
@@ -135,7 +135,7 @@ class _LoginState extends State<Login> {
                 child: Text(
                   "Don't have an account? Click me.",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black87,
                     fontSize: 15
                   ),
                   )
@@ -155,33 +155,33 @@ class _LoginState extends State<Login> {
       error = errorData["error"];
     }
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(12),
           child: ListView(
             children: <Widget>[
                 Text(
-                  "Build no. 27032021\nVersion 0.01 - Alpha Test",
+                  "Build no. 6212021\nVersion 0.01 - Development Test",
                   style: TextStyle(
-                    color: Colors.white60
+                    color: Colors.black87
                   ),
                   ),
                 SizedBox(height: 70),
                 Center(
                   child: Text(
-                    "TEXT",
+                    "BUSY",
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 135
+                      color: Colors.black87,
+                      fontSize: 70
                     ),
                     ),
                 ),
                 Center(
                   child: Text(
-                    "ADVENTURES",
+                    "KIDDOS",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black87,
                       fontSize: 50
                     ),
                     ),
@@ -189,23 +189,14 @@ class _LoginState extends State<Login> {
                 SizedBox(height: 10),
                 Center(
                   child: Text(
-                    "A DND SPIN-OFF RPG GAME",
+                    "A fun learning platform for kids.",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black87,
                       fontSize: 17,
                       letterSpacing: 2,
                     ),
                     ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Image.asset(
-                      "assets/campfire.gif",
-                    ),
-                  ],
-                ),
-                SizedBox(height: 30),
                 Center(
                   child: Text(
                     error,
