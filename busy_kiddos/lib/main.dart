@@ -9,7 +9,12 @@ import 'package:busy_kiddos/screens/register.dart';
 import 'package:busy_kiddos/services/authenticator.dart';
 import 'package:provider/provider.dart';
 import 'package:busy_kiddos/models/user.dart';
+<<<<<<< HEAD
 import 'package:busy_kiddos/screens/try.dart';
+=======
+import 'package:busy_kiddos/screens/try.dart'; 
+
+>>>>>>> 4aa651fa9fc6b68f249dbcf15a133c248f0a0717
 void main() => runApp(Starter());
 
 class Starter extends StatefulWidget {
