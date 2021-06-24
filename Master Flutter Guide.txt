@@ -1,4 +1,4 @@
-CHAPTER 1 - THEORIES
+CHAPTER 1 - THEORY
 
 # Creating the main() function of your flutter app.
 // Note: Example Only:
