@@ -26,11 +26,17 @@ class _HomeState extends State<Home> {
       print("(home.dart)Logout failed."); // debug
     }
   }
+
+  void transferScreen(){
+  
+    print("asdf");
+    Navigator.pushNamed(context,"try.dart");
+  }
   
   @override
   Widget build(BuildContext context) {
     return toggle == true ? Scaffold(
-      backgroundColor: Colors.black54,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
           "HOME CAMP",
@@ -49,14 +55,13 @@ class _HomeState extends State<Home> {
             )
         ],
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/campfirebg.gif"),
-            fit: BoxFit.cover
-          )
-        ),
-      )
+      body: Column(
+        children: [
+          TextButton(onPressed: (){transferScreen();}, child: Text("Debug button"))
+        ],
+      ),
     ) : SetupCharacter();
   }
+
+  text(String s) {}
 }

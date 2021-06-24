@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+
+class Quiz extends StatefulWidget {
+  @override
+  _QuizState createState() => _QuizState();
+}
+
+class _QuizState extends State<Quiz> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          SizedBox(height: 30),
+          Center(child: Text("WELCOME",
+          style: TextStyle(
+            fontSize: 30
+          )
+          )),
+          Center(child: Text("TO",
+          style: TextStyle(
+            fontSize: 30
+          )
+          )),
+          Center(child: Text("BUSY KIDDOS",
+          style: TextStyle(
+            fontSize: 30
+          )
+          )),
+        ],
+      ),
+    );
+  }
+}
