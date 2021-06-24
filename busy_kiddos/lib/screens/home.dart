@@ -24,7 +24,7 @@ class _HomeState extends State<Home> {
   }
 
   void transferScreen() {
-    print("gumagana na!");
+    print("Gumagana siya.");
     Navigator.pushNamed(context, "try.dart");
   }
 

@@ -8,9 +8,6 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Text("Hey"),
-    );
+    return Scaffold(appBar: AppBar(), body: Column());
   }
 }
