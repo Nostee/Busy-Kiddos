@@ -10,32 +10,6 @@ class _QuizState extends State<Quiz> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-<<<<<<< HEAD
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          SizedBox(height: 30),
-          Center(child: Text("WELCOME",
-          style: TextStyle(
-            fontSize: 30
-          )
-          )),
-          Center(child: Text("TO",
-          style: TextStyle(
-            fontSize: 30
-          )
-          )),
-          Center(child: Text("BUSY KIDDOS",
-          style: TextStyle(
-            fontSize: 30
-          )
-          )),
-        ],
-      ),
-    );
-  }
-}
-=======
       body: ListView(
         children: [
           SizedBox(height:50),
@@ -100,4 +74,3 @@ class _QuizState extends State<Quiz> {
 }
 
 // WIDGET, PROPERTIES, OBJECTS
->>>>>>> 4aa651fa9fc6b68f249dbcf15a133c248f0a0717

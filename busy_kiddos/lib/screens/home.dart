@@ -27,15 +27,9 @@ class _HomeState extends State<Home> {
     }
   }
 
-<<<<<<< HEAD
-  void transferScreen(){
-  
-    print("asdf");
-=======
   void transferScreen()
   {
     print("Gumagana siya.");
->>>>>>> 4aa651fa9fc6b68f249dbcf15a133c248f0a0717
     Navigator.pushNamed(context,"try.dart");
   }
   
@@ -63,15 +57,9 @@ class _HomeState extends State<Home> {
       ),
       body: Column(
         children: [
-<<<<<<< HEAD
-          TextButton(onPressed: (){transferScreen();}, child: Text("Debug button"))
-        ],
-      ),
-=======
           TextButton(onPressed: (){transferScreen();}, child: Text("Debug Screen"))
         ],
       )
->>>>>>> 4aa651fa9fc6b68f249dbcf15a133c248f0a0717
     ) : SetupCharacter();
   }
 
