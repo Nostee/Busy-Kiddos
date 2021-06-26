@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:busy_kiddos/services/authenticator.dart';
 import 'package:busy_kiddos/widgets/setupCharacter.dart';
-
+//import 'package:busy_kiddos/screens/try.dart';
 // this is the home interface
 
 class Home extends StatefulWidget {
@@ -27,10 +27,14 @@ class _HomeState extends State<Home> {
     }
   }
   
+  void transferScreen(){
+    print("Gumagana siya");
+    Navigator.pushNamed(context, "try.dart" );
+  }
   @override
   Widget build(BuildContext context) {
     return toggle == true ? Scaffold(
-      backgroundColor: Colors.black54,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
           "HOME CAMP",
@@ -49,13 +53,10 @@ class _HomeState extends State<Home> {
             )
         ],
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/campfirebg.gif"),
-            fit: BoxFit.cover
-          )
-        ),
+      body: Column(
+        children: [
+          TextButton(onPressed:(){transferScreen();} , child:Text("Debug Screen") )
+        ],
       )
     ) : SetupCharacter();
   }
