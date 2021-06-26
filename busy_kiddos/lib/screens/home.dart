@@ -26,11 +26,17 @@ class _HomeState extends State<Home> {
       print("(home.dart)Logout failed."); // debug
     }
   }
-  
-  void transferScreen(){
-    print("Gumagana siya");
-    Navigator.pushNamed(context, "try.dart" );
+
+  void transferScreen()
+  {
+    print("Gumagana siya.");
+    Navigator.pushNamed(context,"try.dart");
   }
+  
+  // void transferScreen(){
+  //   print("Gumagana siya");
+  //   Navigator.pushNamed(context, "try.dart" );
+  // }
   @override
   Widget build(BuildContext context) {
     return toggle == true ? Scaffold(
@@ -55,7 +61,11 @@ class _HomeState extends State<Home> {
       ),
       body: Column(
         children: [
-          TextButton(onPressed:(){transferScreen();} , child:Text("Debug Screen") )
+// <<<<<<< HEAD
+//           TextButton(onPressed:(){transferScreen();} , child:Text("Debug Screen") )
+// =======
+//           TextButton(onPressed: (){transferScreen();}, child: Text("Debug Screen"))
+// >>>>>>> e80546e4dc59cbe504d0745c5d892bc249cf490c
         ],
       )
     ) : SetupCharacter();

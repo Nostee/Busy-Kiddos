@@ -9,7 +9,7 @@ import 'package:busy_kiddos/screens/register.dart';
 import 'package:busy_kiddos/screens/try.dart';
 import 'package:busy_kiddos/services/authenticator.dart';
 import 'package:provider/provider.dart';
-import 'package:busy_kiddos/models/user.dart';
+import 'package:busy_kiddos/models/user.dart'; 
 
 void main() => runApp(Starter());
 
