@@ -161,6 +161,8 @@ onPressed: ()
 		Navigator.pushReplacementNamed(context, "/whateverlocation"); 
 		/or/
 		Naviagtor.pop(context, {}) //goes back to the initial screen
+		/or/
+		Navigator.pushNamedAndRemoveUntil(context, "/whateverlocation", (route) => false);
 	}
 	
 # Passing data to other page.
