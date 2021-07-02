@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
 
   void transferScreen() {
     print("Gumagana siya.");
-    Navigator.pushNamed(context, "questionnaire.dart");
+    Navigator.pushNamed(context, "loginlogin.dart");
   }
 
   @override
