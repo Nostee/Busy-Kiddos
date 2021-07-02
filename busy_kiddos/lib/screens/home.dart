@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
   void transferScreen()
   {
     print("Gumagana siya.");
-    Navigator.pushNamed(context,"try.dart");
+    Navigator.pushNamed(context, "questionnaire.dart");
   }
   
   @override
@@ -64,4 +64,6 @@ class _HomeState extends State<Home> {
       )
     ) : SetupCharacter();
   }
+
+  text(String s) {}
 }
