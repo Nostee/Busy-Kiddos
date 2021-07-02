@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:busy_kiddos/services/authenticator.dart';
 import 'package:busy_kiddos/widgets/setupCharacter.dart';
-//import 'package:busy_kiddos/screens/try.dart';
+import 'package:busy_kiddos/screens/try.dart';
 // this is the home interface
 
 class Home extends StatefulWidget {
@@ -33,10 +33,6 @@ class _HomeState extends State<Home> {
     Navigator.pushNamed(context,"try.dart");
   }
   
-  // void transferScreen(){
-  //   print("Gumagana siya");
-  //   Navigator.pushNamed(context, "try.dart" );
-  // }
   @override
   Widget build(BuildContext context) {
     return toggle == true ? Scaffold(
@@ -61,9 +57,7 @@ class _HomeState extends State<Home> {
       ),
       body: Column(
         children: [
-// <<<<<<< HEAD
-//           TextButton(onPressed:(){transferScreen();} , child:Text("Debug Screen") )
-// =======
+           TextButton(onPressed:(){transferScreen();} , child:Text("Debug Screen") )
 //           TextButton(onPressed: (){transferScreen();}, child: Text("Debug Screen"))
 // >>>>>>> e80546e4dc59cbe504d0745c5d892bc249cf490c
         ],
