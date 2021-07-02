@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:busy_kiddos/services/authenticator.dart';
 import 'package:busy_kiddos/widgets/setupCharacter.dart';
-import 'package:busy_kiddos/screens/try.dart';
+//import 'package:busy_kiddos/screens/try.dart';
 // this is the home interface
 
 class Home extends StatefulWidget {
