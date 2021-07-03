@@ -13,33 +13,26 @@ class LoaderAuthenticate extends StatefulWidget {
 
 class _LoaderAuthenticateState extends State<LoaderAuthenticate> {
   dynamic user;
-  Future<void> changeScreen() async
-  {
-    try
-    {
-      await Future.delayed(Duration(seconds: 3),() {
-		  if(user==null)
-      {
-        Navigator.pushNamedAndRemoveUntil(context, "login.dart", (route) => false);
-      }
-      else
-      {
-        Navigator.pushNamedAndRemoveUntil(context, "home.dart",(route)=> false);
-    }
-		});
-    }
-    catch(e)
-    {
-
-    }
+  Future<void> changeScreen() async {
+    try {
+      await Future.delayed(Duration(seconds: 3), () {
+        if (user == null) {
+          Navigator.pushNamedAndRemoveUntil(
+              context, "loginlogin.dart", (route) => false);
+        } else {
+          Navigator.pushNamedAndRemoveUntil(
+              context, "home.dart", (route) => false);
+        }
+      });
+    } catch (e) {}
   }
 
   @override
   Widget build(BuildContext context) {
     user = Provider.of<UserLogin>(context);
-    print("(loaderAuthenticate.dart)Fetched data of UserLogin provider: $user"); // debug
-    if(user!=null)
-    {
+    print(
+        "(loaderAuthenticate.dart)Fetched data of UserLogin provider: $user"); // debug
+    if (user != null) {
       print("(loaderAuthenticate.dart)Current UID: ${user.uid}"); // debug
     }
     changeScreen();
@@ -49,18 +42,13 @@ class _LoaderAuthenticateState extends State<LoaderAuthenticate> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Center(
-              child: SpinKitCubeGrid(
+                child: SpinKitCubeGrid(
               color: Colors.white,
-              size: 100.0,        
-              )
-            ),
-            Center(
-              child: SizedBox(height:40)
-            ),
-            Center(
-              child: LoadingText()
-            ),
-        ],)
-      );
+              size: 100.0,
+            )),
+            Center(child: SizedBox(height: 40)),
+            Center(child: LoadingText()),
+          ],
+        ));
   }
 }
