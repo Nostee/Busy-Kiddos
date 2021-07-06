@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
   void transferScreen()
   {
     print("Gumagana siya.");
-    Navigator.pushNamed(context, "questionnaire.dart");
+    Navigator.pushNamed(context, "homeFinal.dart");
   }
   
   @override
@@ -38,14 +38,8 @@ class _HomeState extends State<Home> {
     return toggle == true ? Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(
-          "HOME CAMP",
-          style: TextStyle(
-            letterSpacing: 6
-          )
-          ),
         actions: <Widget>[
-          FlatButton(onPressed: (){signOut();}, 
+          ElevatedButton(onPressed: (){signOut();}, 
           child: Text(
             "SIGN OUT",
             style: TextStyle(

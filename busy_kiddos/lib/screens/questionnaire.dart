@@ -34,7 +34,7 @@ class _QuizState extends State<Quiz> {
                 Padding(
                 padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
                     child: ElevatedButton(
-                      onPressed:  (){},
+                      onPressed:  (){Navigator.pushNamed( context, "difficulty.dart");},
                       child: Text("BACK"),
                     style: ElevatedButton.styleFrom(
                       primary: Colors.red,
@@ -48,7 +48,7 @@ class _QuizState extends State<Quiz> {
                   child: Padding(
                   padding: const EdgeInsets.fromLTRB(170, 0, 20, 0),
                   child: ElevatedButton.icon(
-                    onPressed: (){}, 
+                    onPressed: (){Navigator.pushNamed( context, "homeFinal.dart");}, 
                     icon: Icon(
                       Icons.home
                     ), 
@@ -157,7 +157,8 @@ class _QuizState extends State<Quiz> {
                         )   
                       ),
                     ),
-                  )
+                  ),
+                  //ElevatedButton(onPressed: onPressed, child: child),
                 ],
               ),
             ],
