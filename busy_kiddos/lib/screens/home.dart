@@ -10,54 +10,50 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   // temporary
   bool toggle = true;
 
-  void signOut()
-  {
+  void signOut() {
     dynamic check = Authenticator().signOut();
     print("(home.dart)The data in the dynamic check is: $check"); // debug
-    if(check!=null)
-    {
+    if (check != null) {
       Navigator.pushReplacementNamed(context, "login.dart");
-    }
-    else{
+    } else {
       print("(home.dart)Logout failed."); // debug
     }
   }
 
-  void transferScreen()
-  {
+  void transferScreen() {
     print("Gumagana siya.");
     Navigator.pushNamed(context, "homeFinal.dart");
   }
-  
+
   @override
   Widget build(BuildContext context) {
-    return toggle == true ? Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        actions: <Widget>[
-          ElevatedButton(onPressed: (){signOut();}, 
-          child: Text(
-            "SIGN OUT",
-            style: TextStyle(
-              color: Colors.white
-              )
-            )
-            )
-        ],
-      ),
-      body: Column(
-        children: [
-           TextButton(onPressed:(){transferScreen();} , child:Text("Debug Screen") )
-//           TextButton(onPressed: (){transferScreen();}, child: Text("Debug Screen"))
-// >>>>>>> e80546e4dc59cbe504d0745c5d892bc249cf490c
-        ],
-      )
-    ) : SetupCharacter();
+    return toggle == true
+        ? Scaffold(
+            backgroundColor: Colors.white,
+            appBar: AppBar(
+              title: Text("HOME CAMP", style: TextStyle(letterSpacing: 6)),
+              actions: <Widget>[
+                FlatButton(
+                    onPressed: () {
+                      signOut();
+                    },
+                    child:
+                        Text("SIGN OUT", style: TextStyle(color: Colors.white)))
+              ],
+            ),
+            body: Column(
+              children: [
+                TextButton(
+                    onPressed: () {
+                      transferScreen();
+                    },
+                    child: Text("Debug Screen"))
+              ],
+            ))
+        : SetupCharacter();
   }
-
   text(String s) {}
 }

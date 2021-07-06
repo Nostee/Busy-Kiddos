@@ -13,6 +13,8 @@ import 'package:busy_kiddos/models/user.dart';
 import 'package:busy_kiddos/screens/questionnaire.dart';
 import 'package:busy_kiddos/screens/difficulty.dart';
 import 'package:busy_kiddos/screens/homeFinal.dart';
+import 'package:busy_kiddos/screens/loginlogin.dart';
+import 'package:busy_kiddos/screens/regregister.dart';
 
 void main() => runApp(Starter());
 
@@ -24,29 +26,31 @@ class Starter extends StatefulWidget {
 class _StarterState extends State<Starter> {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIOverlays ([]); 
+    SystemChrome.setEnabledSystemUIOverlays([]);
     return StreamProvider<UserLogin>.value(
         value: Authenticator().user,
         child: MaterialApp(
-      theme: ThemeData(
-        primaryColor: Colors.black,
-	      accentColor: Colors.black87,
-        cursorColor: Colors.black87,
-        fontFamily: "RoundedElegance"
-      ),
-      
-      routes: {
-        "/": (context) => LoaderAuthenticate(), 
-        "login.dart": (context) => Login(),
-        "home.dart": (context) => Home(),
-        "register.dart": (context) => Register(),
-        "loaderRegister.dart": (context) => LoaderRegister(),
-        "loaderLogin.dart": (context) => LoaderLogin(),
-        "questionnaire.dart": (context) => Quiz(),
-        "difficulty.dart": (context) => Difficulty(),
-        "homeFinal.dart": (context) => FinalHome(),
-      }
-      )
-    );
+        theme: ThemeData(
+          primaryColor: Colors.black,
+          accentColor: Colors.black87,
+          cursorColor: Colors.black87,
+          fontFamily: "RoundedElegance"
+        ),
+
+        routes: {
+          "/": (context) => LoaderAuthenticate(), 
+          "login.dart": (context) => Login(),
+          "home.dart": (context) => Home(),
+          "register.dart": (context) => Register(),
+          "loaderRegister.dart": (context) => LoaderRegister(),
+          "loaderLogin.dart": (context) => LoaderLogin(),
+          "questionnaire.dart": (context) => Quiz(),
+          "difficulty.dart": (context) => Difficulty(),
+          "homeFinal.dart": (context) => FinalHome(),
+          "loginlogin.dart": (context) => BusyLogin(),
+          "regregister.dart": (context) => BusyRegister(),
+        }
+        )
+      );
   }
 }
