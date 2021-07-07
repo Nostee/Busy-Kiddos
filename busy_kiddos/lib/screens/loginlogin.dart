@@ -106,22 +106,6 @@ class _BusyLoginState extends State<BusyLogin> {
               ),
             ),
           ),
-          Expanded(
-            child: Center(
-              child: Padding(
-                  padding: const EdgeInsets.fromLTRB(190, 20, 0, 0),
-                  child: ElevatedButton.icon(
-                      onPressed: () {
-                        Navigator.pushNamedAndRemoveUntil(
-                            context, "home.dart", (route) => false);
-                      },
-                      icon: Icon(Icons.home),
-                      label: Text("Home"),
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.blue[200],
-                          textStyle: TextStyle(fontSize: 20)))),
-            ),
-          )
         ]),
       ),
     );
