@@ -49,14 +49,6 @@ class _BusyLoginState extends State<BusyLogin> {
                 child: Text("EMAIL:",
                     style: TextStyle(fontSize: 20, color: Colors.purple)),
               ),
-              TextFormField(
-                validator: (x) {
-                  email = x;
-                  return null;
-                },
-                decoration:
-                    InputDecoration(filled: true, fillColor: Colors.white70),
-              )
             ],
           ),
           Row(children: [
@@ -64,17 +56,6 @@ class _BusyLoginState extends State<BusyLogin> {
               padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
               child: Text("PASSWORD:",
                   style: TextStyle(fontSize: 20, color: Colors.amber)),
-            ),
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: TextFormField(
-                    validator: (x) {
-                      password = x;
-                      return null;
-                    },
-                    obscureText: true),
-              ),
             ),
           ]),
           Center(
@@ -102,6 +83,20 @@ class _BusyLoginState extends State<BusyLogin> {
               ),
             ),
           ),
+          Center(
+            child: Padding(
+                padding: const EdgeInsets.fromLTRB(190, 20, 0, 0),
+                child: ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, "home.dart", (route) => false);
+                    },
+                    icon: Icon(Icons.home),
+                    label: Text("Home"),
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.blue[200],
+                        textStyle: TextStyle(fontSize: 20)))),
+          )
         ]),
       ),
     );

@@ -30,6 +30,7 @@ class _QuizState extends State<Quiz> {
         child: ListView(
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
                 padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
@@ -44,23 +45,21 @@ class _QuizState extends State<Quiz> {
                     )   
                     )
                 ),
-                Expanded(
-                  child: Padding(
-                  padding: const EdgeInsets.fromLTRB(170, 0, 20, 0),
-                  child: ElevatedButton.icon(
-                    onPressed: (){Navigator.pushNamed( context, "homeFinal.dart");}, 
-                    icon: Icon(
-                      Icons.home
-                    ), 
-                    label: Text("Home"),
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.pink,
-                      textStyle: TextStyle(
-                        fontSize: 20
-                      )
+                Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                child: ElevatedButton.icon(
+                  onPressed: (){Navigator.pushNamed( context, "homeFinal.dart");}, 
+                  icon: Icon(
+                    Icons.home
+                  ), 
+                  label: Text("Home"),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.pink,
+                    textStyle: TextStyle(
+                      fontSize: 20
                     )
-                    ) 
-                  ),
+                  )
+                  ) 
                 )
               ], 
             ),
@@ -103,7 +102,7 @@ class _QuizState extends State<Quiz> {
                         style: ElevatedButton.styleFrom(
                           primary: Colors.green,
                           textStyle: TextStyle(
-                            fontSize: 30
+                            fontSize: 20
                           )
                         )   
                     ),
@@ -118,7 +117,7 @@ class _QuizState extends State<Quiz> {
                         style: ElevatedButton.styleFrom(
                           primary: Colors.purple,
                           textStyle: TextStyle(
-                            fontSize: 30
+                            fontSize: 20
                           )
                         )   
                       ),
@@ -137,7 +136,7 @@ class _QuizState extends State<Quiz> {
                         style: ElevatedButton.styleFrom(
                           primary: Colors.orange,
                           textStyle: TextStyle(
-                            fontSize: 30
+                            fontSize: 20
                           )
                         )   
                     ),
@@ -152,7 +151,7 @@ class _QuizState extends State<Quiz> {
                         style: ElevatedButton.styleFrom(
                           primary: Colors.lightBlue,
                           textStyle: TextStyle(
-                            fontSize: 30
+                            fontSize: 20
                           )
                         )   
                       ),
