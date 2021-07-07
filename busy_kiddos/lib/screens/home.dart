@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:busy_kiddos/services/authenticator.dart';
 import 'package:busy_kiddos/widgets/setupCharacter.dart';
-
+//import 'package:busy_kiddos/screens/try.dart';
 // this is the home interface
 
 class Home extends StatefulWidget {
@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
 
   void transferScreen() {
     print("Gumagana siya.");
-    Navigator.pushNamed(context, "loginlogin.dart");
+    Navigator.pushNamed(context, "homeFinal.dart");
   }
 
   @override
@@ -55,6 +55,5 @@ class _HomeState extends State<Home> {
             ))
         : SetupCharacter();
   }
-
   text(String s) {}
 }
