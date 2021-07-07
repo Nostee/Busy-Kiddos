@@ -49,17 +49,14 @@ class _BusyLoginState extends State<BusyLogin> {
                 child: Text("EMAIL:",
                     style: TextStyle(fontSize: 20, color: Colors.purple)),
               ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: TextFormField(
-                    validator: (x) {
-                      email = x;
-                      return null;
-                    },
-                  ),
-                ),
-              ),
+              TextFormField(
+                validator: (x) {
+                  email = x;
+                  return null;
+                },
+                decoration:
+                    InputDecoration(filled: true, fillColor: Colors.white70),
+              )
             ],
           ),
           Row(children: [
@@ -68,8 +65,7 @@ class _BusyLoginState extends State<BusyLogin> {
               child: Text("PASSWORD:",
                   style: TextStyle(fontSize: 20, color: Colors.amber)),
             ),
-            Expanded(
-                child: Center(
+            Center(
               child: Padding(
                 padding: const EdgeInsets.all(10),
                 child: TextFormField(
@@ -79,7 +75,7 @@ class _BusyLoginState extends State<BusyLogin> {
                     },
                     obscureText: true),
               ),
-            )),
+            ),
           ]),
           Center(
             child: Padding(
