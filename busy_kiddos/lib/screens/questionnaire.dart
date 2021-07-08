@@ -72,7 +72,7 @@ class _QuizState extends State<Quiz> {
                 child: Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.fromLTRB(0, 20, 0, 30),
+                      padding: EdgeInsets.fromLTRB(0, 50, 0, 30),
                       child: Text("QUESTION #1",
                       style: TextStyle(
                         fontSize: 20,
