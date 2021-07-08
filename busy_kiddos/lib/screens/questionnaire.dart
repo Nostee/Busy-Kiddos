@@ -70,22 +70,26 @@ class _QuizState extends State<Quiz> {
               Card(
                 child: Column(
                   children: [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(0, 50, 0, 30),
-                      child: Text("QUESTION #1",
-                      style: TextStyle(
-                        fontSize: 20,
-                        
+                    Center(
+                      child: Padding(
+                        padding: EdgeInsets.fromLTRB(0, 50, 0, 30),
+                        child: Text("QUESTION #1",
+                        style: TextStyle(
+                          fontSize: 20,
+                          
+                          )
                         )
-                      )
+                      ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(90, 20, 90, 50),
-                      child: Text("WHAT IS 1 + 1 =",
-                      style: TextStyle(
-                        fontSize: 30
+                    Center(
+                      child: Padding(
+                        padding: EdgeInsets.fromLTRB(90, 20, 90, 50),
+                        child: Text("WHAT IS 1 + 1 =",
+                        style: TextStyle(
+                          fontSize: 25
+                          )
                         )
-                      )
+                      ),
                     ),
                   ],
                 ),
@@ -93,9 +97,10 @@ class _QuizState extends State<Quiz> {
               ),
 
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 40, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(55, 40, 0, 0),
                     child: ElevatedButton(
                       onPressed:  (){answerA();},
                       child: Text("SAMPLE A"),
@@ -108,28 +113,27 @@ class _QuizState extends State<Quiz> {
                     ),
       
                   ),
-                  Expanded(
-                      child: Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 40, 20, 0),
-                      child: ElevatedButton(
-                        onPressed:  (){answerB();},
-                        child: Text("SAMPLE B"),
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.purple,
-                          textStyle: TextStyle(
-                            fontSize: 20
-                          )
-                        )   
-                      ),
-                    ),
-                  )
+                  Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 40, 55, 0),
+                  child: ElevatedButton(
+                    onPressed:  (){answerB();},
+                    child: Text("SAMPLE B"),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.purple,
+                      textStyle: TextStyle(
+                        fontSize: 20
+                      )
+                    )   
+                  ),
+                    )
                 ],
               ),
 
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(55, 10, 0, 0),
                     child: ElevatedButton(
                       onPressed:  (){answerC();},
                       child: Text("SAMPLE C"),
@@ -142,21 +146,19 @@ class _QuizState extends State<Quiz> {
                     ),
       
                   ),
-                  Expanded(
-                      child: Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 10, 20, 0),
-                      child: ElevatedButton(
-                        onPressed:  (){answerD();},
-                        child: Text("SAMPLE D"),
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.lightBlue,
-                          textStyle: TextStyle(
-                            fontSize: 20
-                          )
-                        )   
-                      ),
-                    ),
+                  Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 10, 55, 0),
+                  child: ElevatedButton(
+                    onPressed:  (){answerD();},
+                    child: Text("SAMPLE D"),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.lightBlue,
+                      textStyle: TextStyle(
+                        fontSize: 20
+                      )
+                    )   
                   ),
+                    ),
                   //ElevatedButton(onPressed: onPressed, child: child),
                 ],
               ),
