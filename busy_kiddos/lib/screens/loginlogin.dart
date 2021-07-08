@@ -49,17 +49,6 @@ class _BusyLoginState extends State<BusyLogin> {
                 child: Text("EMAIL:",
                     style: TextStyle(fontSize: 20, color: Colors.purple)),
               ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: TextFormField(
-                    validator: (x) {
-                      email = x;
-                      return null;
-                    },
-                  ),
-                ),
-              ),
             ],
           ),
           Row(children: [
@@ -68,18 +57,6 @@ class _BusyLoginState extends State<BusyLogin> {
               child: Text("PASSWORD:",
                   style: TextStyle(fontSize: 20, color: Colors.amber)),
             ),
-            Expanded(
-                child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: TextFormField(
-                    validator: (x) {
-                      password = x;
-                      return null;
-                    },
-                    obscureText: true),
-              ),
-            )),
           ]),
           Center(
             child: Padding(
@@ -106,21 +83,19 @@ class _BusyLoginState extends State<BusyLogin> {
               ),
             ),
           ),
-          Expanded(
-            child: Center(
-              child: Padding(
-                  padding: const EdgeInsets.fromLTRB(190, 20, 0, 0),
-                  child: ElevatedButton.icon(
-                      onPressed: () {
-                        Navigator.pushNamedAndRemoveUntil(
-                            context, "home.dart", (route) => false);
-                      },
-                      icon: Icon(Icons.home),
-                      label: Text("Home"),
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.blue[200],
-                          textStyle: TextStyle(fontSize: 20)))),
-            ),
+          Center(
+            child: Padding(
+                padding: const EdgeInsets.fromLTRB(190, 20, 0, 0),
+                child: ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, "home.dart", (route) => false);
+                    },
+                    icon: Icon(Icons.home),
+                    label: Text("Home"),
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.blue[200],
+                        textStyle: TextStyle(fontSize: 20)))),
           )
         ]),
       ),
