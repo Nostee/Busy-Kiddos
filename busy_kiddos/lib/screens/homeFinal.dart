@@ -1,6 +1,8 @@
 //import 'package:busy_kiddos/screens/difficulty.dart';
 import 'package:flutter/material.dart';
 
+String sub= "";
+
 class FinalHome extends StatefulWidget {
   @override
   _FinalHomeState createState() => _FinalHomeState();
@@ -55,7 +57,7 @@ class _FinalHomeState extends State<FinalHome> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 100,0,0),
-                        child: ElevatedButton(onPressed:(){Navigator.pushNamed( context, "difficulty.dart");print("English");}, child: Text("ENGLISH"),
+                        child: ElevatedButton(onPressed:(){Navigator.pushNamed( context, "difficulty.dart"); sub="English";}, child: Text("ENGLISH"),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.red,
                           textStyle:  TextStyle(
@@ -64,7 +66,7 @@ class _FinalHomeState extends State<FinalHome> {
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 40, 0,0),
-                        child: ElevatedButton(onPressed: (){Navigator.pushNamed( context, "difficulty.dart");print("Science");}, child: Text("SCIENCE"),
+                        child: ElevatedButton(onPressed: (){Navigator.pushNamed( context, "difficulty.dart");sub="Science";}, child: Text("SCIENCE"),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.yellow,
                           textStyle:  TextStyle(
@@ -74,7 +76,7 @@ class _FinalHomeState extends State<FinalHome> {
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 40,0,0),
-                        child: ElevatedButton(onPressed: (){Navigator.pushNamed( context, "difficulty.dart");print("Math");}, child: Text("  MATH  "),
+                        child: ElevatedButton(onPressed: (){Navigator.pushNamed( context, "difficulty.dart"); sub="Math";}, child: Text("  MATH  "),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.green,
                           textStyle:  TextStyle(
