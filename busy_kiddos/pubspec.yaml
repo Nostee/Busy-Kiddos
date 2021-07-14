@@ -70,10 +70,9 @@ flutter:
     - family: RoundedElegance
       fonts:
         - asset: fonts/RoundedElegance.ttf
-    fonts:
-    - family: fonts/kidsfont.ttf     
+    - family: kidsfont
       fonts:
-        - asset: assets/kidsfont.ttf
+        - asset: fonts/kidsfont.ttf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
