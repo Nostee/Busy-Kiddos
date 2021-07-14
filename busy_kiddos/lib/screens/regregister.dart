@@ -67,17 +67,20 @@ class _BusyRegisterState extends State<BusyRegister> {
                           fontFamily: 'kidsfont',
                           color: Colors.red[400])),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Expanded(
-                    child: TextFormField(
-                      validator: (x) {
-                        nameofchild = x;
-                        return null;
-                      },
+                Expanded(
+                    child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: TextFormField(
+                    validator: (x) {
+                      nameofchild = x;
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[200],
                     ),
                   ),
-                )
+                )),
               ],
             ),
             Row(
@@ -90,17 +93,20 @@ class _BusyRegisterState extends State<BusyRegister> {
                           fontFamily: 'kidsfont',
                           color: Colors.purple[600])),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Expanded(
-                    child: TextFormField(
-                      validator: (x) {
-                        age = x;
-                        return null;
-                      },
+                Expanded(
+                    child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: TextFormField(
+                    validator: (x) {
+                      age = x;
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[200],
                     ),
                   ),
-                )
+                )),
               ],
             ),
             Row(
@@ -113,17 +119,20 @@ class _BusyRegisterState extends State<BusyRegister> {
                           fontFamily: 'kidsfont',
                           color: Colors.green[600])),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Expanded(
-                    child: TextFormField(
-                      validator: (x) {
-                        gender = x;
-                        return null;
-                      },
+                Expanded(
+                    child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: TextFormField(
+                    validator: (x) {
+                      gender = x;
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[200],
                     ),
                   ),
-                )
+                )),
               ],
             ),
             Row(
@@ -136,17 +145,20 @@ class _BusyRegisterState extends State<BusyRegister> {
                           fontFamily: 'kidsfont',
                           color: Colors.blue[600])),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Expanded(
-                    child: TextFormField(
-                      validator: (x) {
-                        birthday = x;
-                        return null;
-                      },
+                Expanded(
+                    child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: TextFormField(
+                    validator: (x) {
+                      birthday = x;
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[200],
                     ),
                   ),
-                )
+                )),
               ],
             ),
             Row(
@@ -159,17 +171,20 @@ class _BusyRegisterState extends State<BusyRegister> {
                           fontFamily: 'kidsfont',
                           color: Colors.yellow[600])),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Expanded(
-                    child: TextFormField(
-                      validator: (x) {
-                        guardian = x;
-                        return null;
-                      },
+                Expanded(
+                    child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: TextFormField(
+                    validator: (x) {
+                      guardian = x;
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[200],
                     ),
                   ),
-                )
+                )),
               ],
             ),
             Row(
@@ -182,43 +197,46 @@ class _BusyRegisterState extends State<BusyRegister> {
                           fontFamily: 'kidsfont',
                           color: Colors.orange[600])),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Expanded(
-                    child: TextFormField(
-                      validator: (x) {
-                        email = x;
-                        return null;
-                      },
+                Expanded(
+                    child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: TextFormField(
+                    validator: (x) {
+                      email = x;
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[200],
                     ),
                   ),
-                )
+                )),
               ],
             ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
-                  child: Text("Password:",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontFamily: 'kidsfont',
-                          color: Colors.pink[600])),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Expanded(
-                    child: TextFormField(
-                      validator: (x) {
-                        password = x;
-                        return null;
-                      },
-                      obscureText: true,
+            Row(children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
+                child: Text("PASSWORD:",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'kidsfont',
+                        color: Colors.pink[600])),
+              ),
+              Expanded(
+                  child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextFormField(
+                    validator: (x) {
+                      password = x;
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[200],
                     ),
-                  ),
-                )
-              ],
-            ),
+                    obscureText: true),
+              )),
+            ]),
             Center(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),

@@ -24,13 +24,10 @@ class _BusyLoginState extends State<BusyLogin> {
         key: formKey,
         child: ListView(children: [
           SizedBox(height: 40),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-            child: Center(
-              child: Text("WELCOME",
-                  style: TextStyle(
-                      fontSize: 30, fontFamily: 'kidsfont', color: Colors.red)),
-            ),
+          Center(
+            child: Text("WELCOME",
+                style: TextStyle(
+                    fontSize: 30, fontFamily: 'kidsfont', color: Colors.red)),
           ),
           SizedBox(height: 20),
           Center(
@@ -40,11 +37,14 @@ class _BusyLoginState extends State<BusyLogin> {
           ),
           SizedBox(height: 20),
           Center(
-            child: Text("BUSY KIDDOS!",
-                style: TextStyle(
-                    fontSize: 30, fontFamily: 'kidsfont', color: Colors.green)),
+              child: Text("BUSY KIDDOS",
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontFamily: 'kidsfont',
+                      color: Colors.green))),
+          SizedBox(
+            height: 30,
           ),
-          SizedBox(height: 30),
           Row(
             children: [
               Padding(
@@ -55,17 +55,20 @@ class _BusyLoginState extends State<BusyLogin> {
                         fontFamily: 'kidsfont',
                         color: Colors.purple)),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Expanded(
-                  child: TextFormField(
-                    validator: (x) {
-                      email = x;
-                      return null;
-                    },
+              Expanded(
+                  child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextFormField(
+                  validator: (x) {
+                    email = x;
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey[200],
                   ),
                 ),
-              )
+              )),
             ],
           ),
           Row(children: [
@@ -77,18 +80,20 @@ class _BusyLoginState extends State<BusyLogin> {
                       fontFamily: 'kidsfont',
                       color: Colors.amber)),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Expanded(
-                child: TextFormField(
+            Expanded(
+                child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: TextFormField(
                   validator: (x) {
                     password = x;
                     return null;
                   },
-                  obscureText: true,
-                ),
-              ),
-            )
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                  ),
+                  obscureText: true),
+            )),
           ]),
           Center(
             child: Padding(
