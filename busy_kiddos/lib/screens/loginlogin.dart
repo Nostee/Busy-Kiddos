@@ -24,39 +24,76 @@ class _BusyLoginState extends State<BusyLogin> {
         key: formKey,
         child: ListView(children: [
           SizedBox(height: 40),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-            child: Center(
-              child: Text("WELCOME",
-                  style: TextStyle(fontSize: 30, color: Colors.red)),
-            ),
+          Center(
+            child: Text("WELCOME",
+                style: TextStyle(
+                    fontSize: 30, fontFamily: 'kidsfont', color: Colors.red)),
           ),
           SizedBox(height: 20),
           Center(
-            child:
-                Text("TO", style: TextStyle(fontSize: 30, color: Colors.blue)),
+            child: Text("TO",
+                style: TextStyle(
+                    fontSize: 30, fontFamily: 'kidsfont', color: Colors.blue)),
           ),
           SizedBox(height: 20),
           Center(
-            child: Text("BUSY KIDDOS!",
-                style: TextStyle(fontSize: 30, color: Colors.green)),
+              child: Text("BUSY KIDDOS",
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontFamily: 'kidsfont',
+                      color: Colors.green))),
+          SizedBox(
+            height: 30,
           ),
-          SizedBox(height: 30),
           Row(
             children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
                 child: Text("EMAIL:",
-                    style: TextStyle(fontSize: 20, color: Colors.purple)),
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'kidsfont',
+                        color: Colors.purple)),
               ),
+              Expanded(
+                  child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextFormField(
+                  validator: (x) {
+                    email = x;
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                  ),
+                ),
+              )),
             ],
           ),
           Row(children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
               child: Text("PASSWORD:",
-                  style: TextStyle(fontSize: 20, color: Colors.amber)),
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontFamily: 'kidsfont',
+                      color: Colors.amber)),
             ),
+            Expanded(
+                child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: TextFormField(
+                  validator: (x) {
+                    password = x;
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                  ),
+                  obscureText: true),
+            )),
           ]),
           Center(
             child: Padding(
@@ -66,7 +103,8 @@ class _BusyLoginState extends State<BusyLogin> {
                   child: Text("LOGIN"),
                   style: ElevatedButton.styleFrom(
                       primary: Colors.pink[200],
-                      textStyle: TextStyle(fontSize: 20)),
+                      textStyle:
+                          TextStyle(fontSize: 20, fontFamily: 'kidsfont')),
                 )),
           ),
           Center(
@@ -79,24 +117,10 @@ class _BusyLoginState extends State<BusyLogin> {
                 child: Text("REGISTER"),
                 style: ElevatedButton.styleFrom(
                     primary: Colors.purple[400],
-                    textStyle: TextStyle(fontSize: 20)),
+                    textStyle: TextStyle(fontSize: 20, fontFamily: 'kidsfont')),
               ),
             ),
           ),
-          Center(
-            child: Padding(
-                padding: const EdgeInsets.fromLTRB(190, 20, 0, 0),
-                child: ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.pushNamedAndRemoveUntil(
-                          context, "home.dart", (route) => false);
-                    },
-                    icon: Icon(Icons.home),
-                    label: Text("Home"),
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.blue[200],
-                        textStyle: TextStyle(fontSize: 20)))),
-          )
         ]),
       ),
     );

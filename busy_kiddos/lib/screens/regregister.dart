@@ -48,14 +48,13 @@ class _BusyRegisterState extends State<BusyRegister> {
                         label: Text("Back"),
                         style: ElevatedButton.styleFrom(
                             primary: Colors.blue[200],
-                            textStyle: TextStyle(fontSize: 20)))),
+                            textStyle: TextStyle(
+                                fontSize: 20, fontFamily: 'kidsfont')))),
               ),
             ),
             Center(
               child: Text("REGISTER",
-                  style: TextStyle(
-                    fontSize: 30,
-                  )),
+                  style: TextStyle(fontSize: 30, fontFamily: 'kidsfont')),
             ),
             SizedBox(height: 20),
             Row(
@@ -63,15 +62,25 @@ class _BusyRegisterState extends State<BusyRegister> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
                   child: Text("Name of child:",
-                      style: TextStyle(fontSize: 20, color: Colors.red[400])),
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: 'kidsfont',
+                          color: Colors.red[400])),
                 ),
                 Expanded(
                     child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: TextFormField(validator: (x) {
-                          nameofchild = x;
-                          return null;
-                        })))
+                  padding: const EdgeInsets.all(10),
+                  child: TextFormField(
+                    validator: (x) {
+                      nameofchild = x;
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[200],
+                    ),
+                  ),
+                )),
               ],
             ),
             Row(
@@ -79,16 +88,25 @@ class _BusyRegisterState extends State<BusyRegister> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
                   child: Text("Age:",
-                      style:
-                          TextStyle(fontSize: 20, color: Colors.purple[600])),
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: 'kidsfont',
+                          color: Colors.purple[600])),
                 ),
                 Expanded(
                     child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: TextFormField(validator: (x) {
-                          age = x;
-                          return null;
-                        })))
+                  padding: const EdgeInsets.all(10),
+                  child: TextFormField(
+                    validator: (x) {
+                      age = x;
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[200],
+                    ),
+                  ),
+                )),
               ],
             ),
             Row(
@@ -96,15 +114,25 @@ class _BusyRegisterState extends State<BusyRegister> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
                   child: Text("Gender:",
-                      style: TextStyle(fontSize: 20, color: Colors.green[600])),
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: 'kidsfont',
+                          color: Colors.green[600])),
                 ),
                 Expanded(
                     child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: TextFormField(validator: (x) {
-                          gender = x;
-                          return null;
-                        })))
+                  padding: const EdgeInsets.all(10),
+                  child: TextFormField(
+                    validator: (x) {
+                      gender = x;
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[200],
+                    ),
+                  ),
+                )),
               ],
             ),
             Row(
@@ -112,15 +140,25 @@ class _BusyRegisterState extends State<BusyRegister> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
                   child: Text("Birthday:",
-                      style: TextStyle(fontSize: 20, color: Colors.blue[600])),
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: 'kidsfont',
+                          color: Colors.blue[600])),
                 ),
                 Expanded(
                     child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: TextFormField(validator: (x) {
-                          birthday = x;
-                          return null;
-                        })))
+                  padding: const EdgeInsets.all(10),
+                  child: TextFormField(
+                    validator: (x) {
+                      birthday = x;
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[200],
+                    ),
+                  ),
+                )),
               ],
             ),
             Row(
@@ -128,16 +166,25 @@ class _BusyRegisterState extends State<BusyRegister> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
                   child: Text("Guardian:",
-                      style:
-                          TextStyle(fontSize: 20, color: Colors.yellow[600])),
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: 'kidsfont',
+                          color: Colors.yellow[600])),
                 ),
                 Expanded(
                     child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: TextFormField(validator: (x) {
-                          guardian = x;
-                          return null;
-                        })))
+                  padding: const EdgeInsets.all(10),
+                  child: TextFormField(
+                    validator: (x) {
+                      guardian = x;
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[200],
+                    ),
+                  ),
+                )),
               ],
             ),
             Row(
@@ -145,37 +192,51 @@ class _BusyRegisterState extends State<BusyRegister> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
                   child: Text("Email:",
-                      style:
-                          TextStyle(fontSize: 20, color: Colors.orange[600])),
-                ),
-                Expanded(
-                    child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: TextFormField(validator: (x) {
-                          email = x;
-                          return null;
-                        })))
-              ],
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
-                  child: Text("Password:",
-                      style: TextStyle(fontSize: 20, color: Colors.pink[600])),
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: 'kidsfont',
+                          color: Colors.orange[600])),
                 ),
                 Expanded(
                     child: Padding(
                   padding: const EdgeInsets.all(10),
                   child: TextFormField(
-                      validator: (x) {
-                        password = x;
-                        return null;
-                      },
-                      obscureText: true),
-                ))
+                    validator: (x) {
+                      email = x;
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[200],
+                    ),
+                  ),
+                )),
               ],
             ),
+            Row(children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
+                child: Text("PASSWORD:",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'kidsfont',
+                        color: Colors.pink[600])),
+              ),
+              Expanded(
+                  child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextFormField(
+                    validator: (x) {
+                      password = x;
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[200],
+                    ),
+                    obscureText: true),
+              )),
+            ]),
             Center(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
@@ -184,7 +245,8 @@ class _BusyRegisterState extends State<BusyRegister> {
                   child: Text("REGISTER"),
                   style: ElevatedButton.styleFrom(
                       primary: Colors.red[200],
-                      textStyle: TextStyle(fontSize: 20)),
+                      textStyle:
+                          TextStyle(fontSize: 20, fontFamily: 'kidsfont')),
                 ),
               ),
             ),
