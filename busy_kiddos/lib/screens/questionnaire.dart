@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:busy_kiddos/screens/homeFinal.dart';
+import 'package:busy_kiddos/screens/difficulty.dart';
 
 class Quiz extends StatefulWidget {
   @override
@@ -157,9 +159,14 @@ class _QuizState extends State<Quiz> {
                       ),
                     ),
                   ),
-                  //ElevatedButton(onPressed: onPressed, child: child),
+                  
                 ],
               ),
+            ElevatedButton(onPressed: (){
+              print("Subject is: " + sub);
+              print("Difficulty is: " + diff);
+              }, child: Text("GET DATA")),
+
             ],
           ),
 
