@@ -27,7 +27,6 @@ class _QuizState extends State<Quiz> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Form(
         child: ListView(
           children: [
@@ -50,7 +49,10 @@ class _QuizState extends State<Quiz> {
                 Padding(
                 padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
                 child: ElevatedButton.icon(
-                  onPressed: (){Navigator.pushNamed( context, "homeFinal.dart");}, 
+                  onPressed: (){
+                    Navigator.pushNamedAndRemoveUntil(
+                              context, "homeFinal.dart", (route) => false);
+                    }, 
                   icon: Icon(
                     Icons.home
                   ), 
@@ -98,11 +100,13 @@ class _QuizState extends State<Quiz> {
                 
               ),
 
+              SizedBox(height:40),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(55, 40, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
                     child: ElevatedButton(
                       onPressed:  (){answerA();},
                       child: Text("SAMPLE A"),
@@ -116,7 +120,7 @@ class _QuizState extends State<Quiz> {
       
                   ),
                   Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 40, 55, 0),
+                  padding: const EdgeInsets.fromLTRB(0, 0, 30, 0),
                   child: ElevatedButton(
                     onPressed:  (){answerB();},
                     child: Text("SAMPLE B"),
@@ -135,7 +139,7 @@ class _QuizState extends State<Quiz> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(55, 10, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
                     child: ElevatedButton(
                       onPressed:  (){answerC();},
                       child: Text("SAMPLE C"),
@@ -149,7 +153,7 @@ class _QuizState extends State<Quiz> {
       
                   ),
                   Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 10, 55, 0),
+                  padding: const EdgeInsets.fromLTRB(0, 0, 30, 0),
                   child: ElevatedButton(
                     onPressed:  (){answerD();},
                     child: Text("SAMPLE D"),

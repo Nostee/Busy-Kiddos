@@ -4,7 +4,6 @@ import 'package:busy_kiddos/services/authenticator.dart';
 import 'package:busy_kiddos/widgets/loadingText.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-
 // this is called by register.dart
 
 class LoaderRegister extends StatefulWidget {
@@ -41,9 +40,7 @@ class _LoaderRegisterState extends State<LoaderRegister> {
         print(uid);
 
         await Authenticator(uid: uid).passNullStarterData(fetchedData["username"]);
-        Navigator.pushNamedAndRemoveUntil(context, "home.dart", (route) => false);
-
-
+        Navigator.pushNamedAndRemoveUntil(context, "homeFinal.dart", (route) => false);
       }
       else
       {

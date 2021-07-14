@@ -5,29 +5,38 @@ class BusyRegister extends StatefulWidget {
   _BusyRegisterState createState() => _BusyRegisterState();
 }
 
-String nameofchild;
-String age;
-String gender;
-String birthday;
-String guardian;
-String email;
-String password;
 
-final formKey = GlobalKey<FormState>();
-
-void pressme() {
-  if (formKey.currentState.validate()) {
-    print(nameofchild);
-    print(age);
-    print(gender);
-    print(birthday);
-    print(guardian);
-    print(email);
-    print(password);
-  }
-}
 
 class _BusyRegisterState extends State<BusyRegister> {
+
+  String nameofchild;
+  String age;
+  String gender;
+  String birthday;
+  String guardian;
+  String email;
+  String password;
+
+  final formKey = GlobalKey<FormState>();
+
+  void pressme() {
+    if (formKey.currentState.validate()) {
+      print(nameofchild);
+      print(age);
+      print(gender);
+      print(birthday);
+      print(guardian);
+      print(email);
+      print(password);
+
+      Navigator.pushNamed(context, "loaderRegister.dart", arguments: {
+        "email": email,
+        "password": password,
+        "username": nameofchild,
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,10 +44,8 @@ class _BusyRegisterState extends State<BusyRegister> {
           key: formKey,
           child: ListView(children: [
             SizedBox(height: 40),
-            Expanded(
-              child: Center(
-                child: Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 220, 0),
+            Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 200, 0),
                     child: ElevatedButton.icon(
                         onPressed: () {
                           Navigator.pushNamedAndRemoveUntil(
@@ -50,8 +57,7 @@ class _BusyRegisterState extends State<BusyRegister> {
                             primary: Colors.blue[200],
                             textStyle: TextStyle(
                                 fontSize: 20, fontFamily: 'kidsfont')))),
-              ),
-            ),
+            SizedBox(height: 20),
             Center(
               child: Text("REGISTER",
                   style: TextStyle(fontSize: 30, fontFamily: 'kidsfont')),
@@ -216,7 +222,7 @@ class _BusyRegisterState extends State<BusyRegister> {
             Row(children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
-                child: Text("PASSWORD:",
+                child: Text("Password:",
                     style: TextStyle(
                         fontSize: 20,
                         fontFamily: 'kidsfont',
@@ -241,7 +247,9 @@ class _BusyRegisterState extends State<BusyRegister> {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    pressme();
+                  },
                   child: Text("REGISTER"),
                   style: ElevatedButton.styleFrom(
                       primary: Colors.red[200],

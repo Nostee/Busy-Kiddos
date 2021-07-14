@@ -5,18 +5,23 @@ class BusyLogin extends StatefulWidget {
   _BusyLoginState createState() => _BusyLoginState();
 }
 
-String email;
-String password;
-final formKey = GlobalKey<FormState>();
-
-void pressme() {
-  if (formKey.currentState.validate()) {
-    print(email);
-    print(password);
-  }
-}
 
 class _BusyLoginState extends State<BusyLogin> {
+  String email;
+  String password;
+  final formKey = GlobalKey<FormState>();
+
+  void pressme() {
+    if (formKey.currentState.validate()) {
+      print(email);
+      print(password);
+      Navigator.pushReplacementNamed(context, "loaderLogin.dart", arguments: {
+      "email": email,
+      "password": password,
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,8 +61,6 @@ class _BusyLoginState extends State<BusyLogin> {
                         color: Colors.purple)),
               ),
               Expanded(
-                  child: Padding(
-                padding: const EdgeInsets.all(10),
                 child: TextFormField(
                   validator: (x) {
                     email = x;
@@ -68,7 +71,7 @@ class _BusyLoginState extends State<BusyLogin> {
                     fillColor: Colors.grey[200],
                   ),
                 ),
-              )),
+              ),
             ],
           ),
           Row(children: [
@@ -81,8 +84,6 @@ class _BusyLoginState extends State<BusyLogin> {
                       color: Colors.amber)),
             ),
             Expanded(
-                child: Padding(
-              padding: const EdgeInsets.all(10),
               child: TextFormField(
                   validator: (x) {
                     password = x;
@@ -93,13 +94,15 @@ class _BusyLoginState extends State<BusyLogin> {
                     fillColor: Colors.grey[200],
                   ),
                   obscureText: true),
-            )),
+            ),
           ]),
           Center(
             child: Padding(
                 padding: const EdgeInsets.all(20),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    pressme();
+                  },
                   child: Text("LOGIN"),
                   style: ElevatedButton.styleFrom(
                       primary: Colors.pink[200],

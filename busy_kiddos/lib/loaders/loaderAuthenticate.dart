@@ -21,7 +21,7 @@ class _LoaderAuthenticateState extends State<LoaderAuthenticate> {
               context, "loginlogin.dart", (route) => false);
         } else {
           Navigator.pushNamedAndRemoveUntil(
-              context, "home.dart", (route) => false);
+              context, "homeFinal.dart", (route) => false);
         }
       });
     } catch (e) {}

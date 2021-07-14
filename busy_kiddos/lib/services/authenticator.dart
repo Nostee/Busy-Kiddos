@@ -52,6 +52,7 @@ class Authenticator
     }
     catch(e)
     {
+      print('Error');
       print(e.toString());
       return null;
     }

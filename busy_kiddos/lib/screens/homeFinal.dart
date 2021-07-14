@@ -1,5 +1,6 @@
 //import 'package:busy_kiddos/screens/difficulty.dart';
 import 'package:flutter/material.dart';
+import 'package:busy_kiddos/services/authenticator.dart';
 
 String sub= "";
 
@@ -11,10 +12,21 @@ void difficulty(){
 
 }
 class _FinalHomeState extends State<FinalHome> {
+
+  void signout() async
+  {
+    dynamic check = Authenticator().signOut();
+    print("(home.dart)The data in the dynamic check is: $check"); // debug
+    if (check != null) {
+      Navigator.pushReplacementNamed(context, "loginlogin.dart");
+    } else {
+      print("(home.dart)Logout failed."); // debug
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    appBar: AppBar(),
       body: Form(
         //child: ListView(
           //child: [
@@ -87,7 +99,10 @@ class _FinalHomeState extends State<FinalHome> {
                        Padding(
                         padding: const EdgeInsets.fromLTRB(0,70, 0, 0),
                         child: ElevatedButton(
-                        onPressed:  (){Navigator.pushNamed( context, "login.dart");print("Sign Out");},child: Text("Sign Out"),
+                        onPressed:  (){
+                          signout();
+                        },
+                        child: Text("Sign Out"),
                         style: ElevatedButton.styleFrom(
                         primary: Colors.blue,
                         textStyle: TextStyle(

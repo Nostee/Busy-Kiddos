@@ -3,9 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:busy_kiddos/loaders/loaderAuthenticate.dart';
 import 'package:busy_kiddos/loaders/loaderLogin.dart';
 import 'package:busy_kiddos/loaders/loaderRegister.dart';
-import 'package:busy_kiddos/screens/home.dart';
-import 'package:busy_kiddos/screens/login.dart';
-import 'package:busy_kiddos/screens/register.dart';
 //import 'package:busy_kiddos/screens/try.dart';
 import 'package:busy_kiddos/services/authenticator.dart';
 import 'package:provider/provider.dart';
@@ -37,9 +34,6 @@ class _StarterState extends State<Starter> {
                 fontFamily: "RoundedElegance"),
             routes: {
               "/": (context) => LoaderAuthenticate(),
-              "login.dart": (context) => Login(),
-              "home.dart": (context) => Home(),
-              "register.dart": (context) => Register(),
               "loaderRegister.dart": (context) => LoaderRegister(),
               "loaderLogin.dart": (context) => LoaderLogin(),
               "questionnaire.dart": (context) => Quiz(),
