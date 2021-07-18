@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:busy_kiddos/loaders/loaderAuthenticate.dart';
 import 'package:busy_kiddos/loaders/loaderLogin.dart';
 import 'package:busy_kiddos/loaders/loaderRegister.dart';
-//import 'package:busy_kiddos/screens/try.dart';
 import 'package:busy_kiddos/services/authenticator.dart';
 import 'package:provider/provider.dart';
 import 'package:busy_kiddos/models/user.dart';
