@@ -44,31 +44,40 @@ class _FinalHomeState extends State<FinalHome> {
                 //     )   
                 //     )
                 // ),
-                Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Image.asset('assets/icon.jpg',
-                      width: 200,
-                      height: 200,
-                    fit: BoxFit.contain,
+                Center(
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
+                    child: Column(
+                      children: [
+                        // Image.asset('assets/icon.jpg',
+                        //   width: 200,
+                        //   height: 200,
+                        // fit: BoxFit.contain,
+                        // ),
+                        CircleAvatar(
+                          radius: 80,
+                          backgroundImage: AssetImage(
+                            'assets/icon2.jpg'
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                          child: Text("Melissa Mendoza",
+                            style: TextStyle(
+                              fontFamily: 'LoveYaLikeASister',
+                              fontSize: 30
+                            )
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                  Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0,0,180,0),
-                        child: Text("Name of the Kid"),
-                      ),
-                    ],
                   ),
+                ),
                 Center(
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 100,0,0),
+                        padding: const EdgeInsets.fromLTRB(0, 50,0,0),
                         child: ElevatedButton(onPressed:(){Navigator.pushNamed( context, "difficulty.dart"); sub="English";}, child: Text("ENGLISH"),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.red,
