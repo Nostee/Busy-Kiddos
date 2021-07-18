@@ -87,11 +87,10 @@ class _QuizState extends State<Quiz> {
       }
       else{
         print("done!");
-        //TEMPORARY
-        questionNo = 1;
-        score = 0;
-        // PUSHES THE SCREEN TO DISPLAY THE SCORE (pushandremove)
-        // MERONG BUTTON NA "BACK TO HOMESCREEN"
+        Navigator.pushNamedAndRemoveUntil(context, "score.dart", (route) => false, arguments: {
+          "score" : score
+        });
+        
       }
     });
   }

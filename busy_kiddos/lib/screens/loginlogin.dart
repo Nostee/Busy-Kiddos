@@ -138,6 +138,21 @@ class _BusyLoginState extends State<BusyLogin> {
               ),
             ),
           ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "score.dart");
+                },
+                child: Text("score"),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.purple[400],
+                    textStyle: TextStyle(
+                        fontSize: 20, fontFamily: 'LoveYaLikeASister')),
+              ),
+            ),
+          ),
         ]),
       ),
     );
