@@ -73,6 +73,14 @@ flutter:
     - family: kidsfont
       fonts:
         - asset: fonts/kidsfont.ttf
+    - family: Boogaloo
+      fonts:
+        - asset: fonts/Boogaloo.ttf
+    - family: LoveYaLikeASister
+      fonts:
+        - asset: fonts/LoveYaLikeASister.ttf
+
+
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

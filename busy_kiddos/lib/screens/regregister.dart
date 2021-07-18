@@ -5,10 +5,7 @@ class BusyRegister extends StatefulWidget {
   _BusyRegisterState createState() => _BusyRegisterState();
 }
 
-
-
 class _BusyRegisterState extends State<BusyRegister> {
-
   String nameofchild;
   String age;
   String gender;
@@ -40,27 +37,31 @@ class _BusyRegisterState extends State<BusyRegister> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green[100],
       body: Form(
           key: formKey,
           child: ListView(children: [
             SizedBox(height: 40),
             Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 0, 200, 0),
-                    child: ElevatedButton.icon(
-                        onPressed: () {
-                          Navigator.pushNamedAndRemoveUntil(
-                              context, "loginlogin.dart", (route) => false);
-                        },
-                        icon: Icon(Icons.home),
-                        label: Text("Back"),
-                        style: ElevatedButton.styleFrom(
-                            primary: Colors.blue[200],
-                            textStyle: TextStyle(
-                                fontSize: 20, fontFamily: 'kidsfont')))),
+                padding: const EdgeInsets.fromLTRB(10, 0, 200, 0),
+                child: ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, "loginlogin.dart", (route) => false);
+                    },
+                    icon: Icon(Icons.home),
+                    label: Text("Back"),
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.blue[200],
+                        textStyle: TextStyle(
+                            fontSize: 20, fontFamily: 'LoveYaLikeASister')))),
             SizedBox(height: 20),
             Center(
               child: Text("REGISTER",
-                  style: TextStyle(fontSize: 30, fontFamily: 'kidsfont')),
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontFamily: 'Boogaloo',
+                      color: Colors.pink[700])),
             ),
             SizedBox(height: 20),
             Row(
@@ -70,7 +71,7 @@ class _BusyRegisterState extends State<BusyRegister> {
                   child: Text("Name of child:",
                       style: TextStyle(
                           fontSize: 20,
-                          fontFamily: 'kidsfont',
+                          fontFamily: 'LoveYaLikeASister',
                           color: Colors.red[400])),
                 ),
                 Expanded(
@@ -96,7 +97,7 @@ class _BusyRegisterState extends State<BusyRegister> {
                   child: Text("Age:",
                       style: TextStyle(
                           fontSize: 20,
-                          fontFamily: 'kidsfont',
+                          fontFamily: 'LoveYaLikeASister',
                           color: Colors.purple[600])),
                 ),
                 Expanded(
@@ -122,7 +123,7 @@ class _BusyRegisterState extends State<BusyRegister> {
                   child: Text("Gender:",
                       style: TextStyle(
                           fontSize: 20,
-                          fontFamily: 'kidsfont',
+                          fontFamily: 'LoveYaLikeASister',
                           color: Colors.green[600])),
                 ),
                 Expanded(
@@ -148,7 +149,7 @@ class _BusyRegisterState extends State<BusyRegister> {
                   child: Text("Birthday:",
                       style: TextStyle(
                           fontSize: 20,
-                          fontFamily: 'kidsfont',
+                          fontFamily: 'LoveYaLikeASister',
                           color: Colors.blue[600])),
                 ),
                 Expanded(
@@ -174,8 +175,8 @@ class _BusyRegisterState extends State<BusyRegister> {
                   child: Text("Guardian:",
                       style: TextStyle(
                           fontSize: 20,
-                          fontFamily: 'kidsfont',
-                          color: Colors.yellow[600])),
+                          fontFamily: 'LoveYaLikeASister',
+                          color: Colors.brown[900])),
                 ),
                 Expanded(
                     child: Padding(
@@ -200,7 +201,7 @@ class _BusyRegisterState extends State<BusyRegister> {
                   child: Text("Email:",
                       style: TextStyle(
                           fontSize: 20,
-                          fontFamily: 'kidsfont',
+                          fontFamily: 'LoveYaLikeASister',
                           color: Colors.orange[600])),
                 ),
                 Expanded(
@@ -225,7 +226,7 @@ class _BusyRegisterState extends State<BusyRegister> {
                 child: Text("Password:",
                     style: TextStyle(
                         fontSize: 20,
-                        fontFamily: 'kidsfont',
+                        fontFamily: 'LoveYaLikeASister',
                         color: Colors.pink[600])),
               ),
               Expanded(
@@ -253,8 +254,8 @@ class _BusyRegisterState extends State<BusyRegister> {
                   child: Text("REGISTER"),
                   style: ElevatedButton.styleFrom(
                       primary: Colors.red[200],
-                      textStyle:
-                          TextStyle(fontSize: 20, fontFamily: 'kidsfont')),
+                      textStyle: TextStyle(
+                          fontSize: 20, fontFamily: 'LoveYaLikeASister')),
                 ),
               ),
             ),
