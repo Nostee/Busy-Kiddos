@@ -12,6 +12,7 @@ import 'package:busy_kiddos/screens/difficulty.dart';
 import 'package:busy_kiddos/screens/homeFinal.dart';
 import 'package:busy_kiddos/screens/loginlogin.dart';
 import 'package:busy_kiddos/screens/regregister.dart';
+import 'package:busy_kiddos/screens/score.dart';
 
 void main() => runApp(Starter());
 
@@ -41,6 +42,7 @@ class _StarterState extends State<Starter> {
               "homeFinal.dart": (context) => FinalHome(),
               "loginlogin.dart": (context) => BusyLogin(),
               "regregister.dart": (context) => BusyRegister(),
+              "score.dart": (context) => Score()
             }));
   }
 }
